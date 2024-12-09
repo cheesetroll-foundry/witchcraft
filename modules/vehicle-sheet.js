@@ -1,10 +1,10 @@
-export class afmbevehicleSheet extends ActorSheet {
+export class witchcraftvehicleSheet extends ActorSheet {
 
     /** @override */
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
-            classes: ["afmbe-jesuisfrog", "sheet", "actor", `${game.settings.get("afmbe-jesuisfrog", "dark-mode") ? "dark-mode" : ""}`],
-            // template: "systems/afmbe-jesuisfrog/templates/vehicle-sheet.hbs",
+            classes: ["witchcraft", "sheet", "actor", `${game.settings.get("witchcraft", "dark-mode") ? "dark-mode" : ""}`],
+            // template: "systems/witchcraft/templates/vehicle-sheet.hbs",
             width: 700,
             height: 780,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "core" }],
@@ -75,8 +75,8 @@ export class afmbevehicleSheet extends ActorSheet {
     }
 
     get template() {
-        const path = "systems/afmbe-jesuisfrog/templates";
-        if (!game.user.isGM && this.actor.limited) return "systems/afmbe-jesuisfrog/templates/limited-vehicle-sheet.hbs";
+        const path = "systems/witchcraft/templates";
+        if (!game.user.isGM && this.actor.limited) return "systems/witchcraft/templates/limited-vehicle-sheet.hbs";
         return `${path}/${this.actor.type}-sheet.hbs`;
     }
 
@@ -136,7 +136,7 @@ export class afmbevehicleSheet extends ActorSheet {
         let chatContent = `<div>
                                 <h2>Damage Roll: ${weapon.name}</h2>
 
-                                <table class="afmbe-chat-roll-table">
+                                <table class="witchcraft-chat-roll-table">
                                     <thead>
                                         <tr>
                                             <th class="table-center-align">Damage</th>
@@ -174,7 +174,7 @@ export class afmbevehicleSheet extends ActorSheet {
         let chatContent = `<div>
                                 <h2>Armor Roll: ${equippedItem.name}</h2>
 
-                                <table class="afmbe-chat-roll-table">
+                                <table class="witchcraft-chat-roll-table">
                                     <thead>
                                         <tr>
                                             <th class="table-center-align">Result</th>

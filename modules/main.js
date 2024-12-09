@@ -1,10 +1,10 @@
 // Import Modules
-import { afmbeActorSheet } from "./actor-sheet.js";
-import { afmbeActor } from "./actor.js";
-import { afmbeItem } from "./item.js";
-import { afmbeItemSheet } from "./item-sheet.js";
-import { afmbeCreatureSheet } from "./creature-sheet.js"
-import { afmbevehicleSheet } from "./vehicle-sheet.js"
+import { witchcraftActorSheet } from "./actor-sheet.js";
+import { witchcraftActor } from "./actor.js";
+import { witchcraftItem } from "./item.js";
+import { witchcraftItemSheet } from "./item-sheet.js";
+import { witchcraftCreatureSheet } from "./creature-sheet.js"
+import { witchcraftvehicleSheet } from "./vehicle-sheet.js"
 import { registerTemplates } from "./register-templates.js";
 import { registerHandlebarsHelpers } from "./handlebars.js";
 
@@ -13,7 +13,7 @@ import { registerHandlebarsHelpers } from "./handlebars.js";
 /* -------------------------------------------- */
 
 Hooks.once("init", async function () {
-    console.log(`Initializing AFMBE System`);
+    console.log(`Initializing WitchCraft System`);
 
     /**
      * Set an initiative formula for the system
@@ -25,8 +25,8 @@ Hooks.once("init", async function () {
     };
 
     // Define Custom Entity Classes
-    CONFIG.Actor.documentClass = afmbeActor
-    CONFIG.Item.documentClass = afmbeItem
+    CONFIG.Actor.documentClass = witchcraftActor
+    CONFIG.Item.documentClass = witchcraftItem
 
     // Register Partial Templates
     registerTemplates();
@@ -35,38 +35,38 @@ Hooks.once("init", async function () {
     // Register sheet application classes
     Actors.unregisterSheet("core", ActorSheet)
 
-    Actors.registerSheet("afmbe-jesuisfrog", afmbeActorSheet,
+    Actors.registerSheet("witchcraft", witchcraftActorSheet,
         {
             types: ["character"],
             makeDefault: true,
-            label: "Default AFMBE Character Sheet"
+            label: "Default WitchCraft Character Sheet"
         })
 
-    Actors.registerSheet("afmbe-jesuisfrog", afmbeCreatureSheet,
+    Actors.registerSheet("witchcraft", witchcraftCreatureSheet,
         {
             types: ["creature"],
             makeDefault: true,
-            label: "Default AFMBE Creature Sheet"
+            label: "Default WitchCraft Creature Sheet"
         })
 
-    Actors.registerSheet("afmbe-jesuisfrog", afmbevehicleSheet,
+    Actors.registerSheet("witchcraft", witchcraftvehicleSheet,
         {
             types: ["vehicle"],
             makeDefault: true,
-            label: "Default AFMBE vehicle Sheet"
+            label: "Default WitchCraft vehicle Sheet"
         })
 
-    Items.registerSheet("afmbe-jesuisfrog", afmbeItemSheet,
+    Items.registerSheet("witchcraft", witchcraftItemSheet,
         {
             makeDefault: true,
-            label: "Default AFMBE Item Sheet"
+            label: "Default WitchCraft Item Sheet"
         })
 
 
     // Game Settings
     function delayedReload() { window.setTimeout(() => location.reload(), 500) }
 
-    game.settings.register("afmbe-jesuisfrog", "dark-mode", {
+    game.settings.register("witchcraft", "dark-mode", {
         name: "Dark Mode",
         hint: "Checking this option enables Dark Mode for the different sheets and items.",
         scope: "world",
@@ -124,7 +124,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
             let chatContent = `<form>
                                     ${attributeLabel}
 
-                                    <table class="afmbe-chat-roll-table">
+                                    <table class="witchcraft-chat-roll-table">
                                         <thead>
                                             <tr>
                                                 <th class="table-center-align">Roll</th>
@@ -150,7 +150,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
                 type: CONST.CHAT_MESSAGE_TYPES.ROLL,
                 user: game.user.id,
                 speaker: ChatMessage.getSpeaker(),
-                flavor: `<div class="afmbe-tags-flex-container">${tags.join('')}</div>`,
+                flavor: `<div class="witchcraft-tags-flex-container">${tags.join('')}</div>`,
                 content: chatContent,
                 roll: roll
             })

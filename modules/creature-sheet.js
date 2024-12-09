@@ -1,9 +1,9 @@
-export class afmbeCreatureSheet extends ActorSheet {
+export class witchcraftCreatureSheet extends ActorSheet {
 
     /** @override */
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
-            classes: ["afmbe-jesuisfrog", "sheet", "actor", `${game.settings.get("afmbe-jesuisfrog", "dark-mode") ? "dark-mode" : ""}`],
+            classes: ["witchcraft", "sheet", "actor", `${game.settings.get("witchcraft", "dark-mode") ? "dark-mode" : ""}`],
             width: 700,
             height: 820,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "core" }],
@@ -86,8 +86,8 @@ export class afmbeCreatureSheet extends ActorSheet {
     }
 
     get template() {
-        const path = "systems/afmbe-jesuisfrog/templates";
-        if (!game.user.isGM && this.actor.limited) return "systems/afmbe-jesuisfrog/templates/limited-creature-sheet.hbs";
+        const path = "systems/witchcraft/templates";
+        if (!game.user.isGM && this.actor.limited) return "systems/witchcraft/templates/limited-creature-sheet.hbs";
         return `${path}/${this.actor.type}-sheet.hbs`;
     }
 
@@ -161,16 +161,16 @@ export class afmbeCreatureSheet extends ActorSheet {
         }
 
         // Create Classes for Dialog Box
-        let mode = game.settings.get("afmbe-jesuisfrog", "dark-mode") ? "dark-mode" : ""
-        let dialogOptions = { classes: ["dialog", "afmbe-jesuisfrog", mode] }
+        let mode = game.settings.get("witchcraft", "dark-mode") ? "dark-mode" : ""
+        let dialogOptions = { classes: ["dialog", "witchcraft", mode] }
 
         // Create Dialog Prompt
         let d = new Dialog({
             title: 'Attribute Roll',
-            content: `<div class="afmbe-dialog-menu">
+            content: `<div class="witchcraft-dialog-menu">
                             <h2>${attributeLabel} Roll</h2>
 
-                            <div class="afmbe-dialog-menu-text-box">
+                            <div class="witchcraft-dialog-menu-text-box">
                                 <div>
                                     <p>Apply modifiers from the creature's Skills.</p>
                                     
@@ -257,8 +257,8 @@ export class afmbeCreatureSheet extends ActorSheet {
 
                         let chatContent = `<form>
                                                 <h2>${attributeLabel} Roll [ ${this.actor.system.primaryAttributes[attributeLabel.toLowerCase()].value} ] - ${attributeTestSelect} Test</h2>
-                                                <div class="afmbe-tags-flex-container"><b>Modifiers</b>: ${tags.join(' | ')}</div>
-                                                <table class="afmbe-chat-roll-table">
+                                                <div class="witchcraft-tags-flex-container"><b>Modifiers</b>: ${tags.join(' | ')}</div>
+                                                <table class="witchcraft-chat-roll-table">
                                                     <thead>
                                                         <tr>
                                                             <th class="table-center-align">Roll</th>
@@ -304,15 +304,15 @@ export class afmbeCreatureSheet extends ActorSheet {
         let weapon = this.actor.getEmbeddedDocument("Item", element.closest('.item').dataset.itemId)
 
         // Create Classes for Dialog Box
-        let mode = game.settings.get("afmbe-jesuisfrog", "dark-mode") ? "dark-mode" : ""
-        let dialogOptions = { classes: ["dialog", "afmbe-jesuisfrog", mode] }
+        let mode = game.settings.get("witchcraft", "dark-mode") ? "dark-mode" : ""
+        let dialogOptions = { classes: ["dialog", "witchcraft", mode] }
 
         // Create Dialog Prompt
         let d = new Dialog({
             title: 'Weapon Roll',
-            content: `<div class="afmbe-dialog-menu">
+            content: `<div class="witchcraft-dialog-menu">
 
-                            <div class="afmbe-dialog-menu-text-box">
+                            <div class="witchcraft-dialog-menu-text-box">
                                 <p><strong>If a ranged weapon</strong>, select how many shots to take and select weapon firing mode. The number of shots
                                 fired will be reduced from the weapon's current load capacity. Make sure you have enough ammo in the chamber!</p>
 
@@ -378,7 +378,7 @@ export class afmbeCreatureSheet extends ActorSheet {
                         let chatContent = `<div>
                                                 <h2>Damage Roll: ${weapon.name}</h2>
 
-                                                <table class="afmbe-chat-roll-table">
+                                                <table class="witchcraft-chat-roll-table">
                                                     <thead>
                                                         <tr>
                                                             <th class="table-center-align">Damage</th>
@@ -400,7 +400,7 @@ export class afmbeCreatureSheet extends ActorSheet {
                             type: CONST.CHAT_MESSAGE_TYPES.ROLL,
                             user: game.user.id,
                             speaker: ChatMessage.getSpeaker(),
-                            flavor: `<div class="afmbe-tags-flex-container-item">${tags.join('')}</div>`,
+                            flavor: `<div class="witchcraft-tags-flex-container-item">${tags.join('')}</div>`,
                             content: chatContent,
                             roll: roll
                         })
@@ -425,7 +425,7 @@ export class afmbeCreatureSheet extends ActorSheet {
         let chatContent = `<div>
                                 <h2>Armor Roll: ${equippedItem.name}</h2>
 
-                                <table class="afmbe-chat-roll-table">
+                                <table class="witchcraft-chat-roll-table">
                                     <thead>
                                         <tr>
                                             <th class="table-center-align">Result</th>

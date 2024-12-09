@@ -21,43 +21,43 @@
         Global Styles
  ---------------------------------------------*/
 
-.afmbe-jesuisfrog.sheet.actor .window-content,
-.afmbe-jesuisfrog.sheet.item .window-content {
+.witchcraft.sheet.actor .window-content,
+.witchcraft.sheet.item .window-content {
     background: url('../images/parchment.jpg');
     color: black;
 }
 
-.afmbe-jesuisfrog.sheet.actor {
+.witchcraft.sheet.actor {
     min-width: 750px;
     min-height: 800px;
 }
 
-.afmbe-jesuisfrog.sheet.actor .entity-link,
-.afmbe-jesuisfrog.sheet.actor .content-link,
-.afmbe-jesuisfrog.sheet.item .entity-link,
-.afmbe-jesuisfrog.sheet.item .content-link {
+.witchcraft.sheet.actor .entity-link,
+.witchcraft.sheet.actor .content-link,
+.witchcraft.sheet.item .entity-link,
+.witchcraft.sheet.item .content-link {
     color: black;
 }
 
-.afmbe-jesuisfrog.sheet.actor button,
-.afmbe-jesuisfrog.sheet.item button {
+.witchcraft.sheet.actor button,
+.witchcraft.sheet.item button {
     color: black;
     background: none;
     border: 1px solid black;
 }
 
-.afmbe-jesuisfrog.sheet.actor input,
-.afmbe-jesuisfrog.sheet.actor select,
-.afmbe-jesuisfrog.sheet.item input,
-.afmbe-jesuisfrog.sheet.item select {
+.witchcraft.sheet.actor input,
+.witchcraft.sheet.actor select,
+.witchcraft.sheet.item input,
+.witchcraft.sheet.item select {
     color: rgb(0, 0, 0);
 }
 
-.afmbe-jesuisfrog.sheet.item .window-content .editable {
+.witchcraft.sheet.item .window-content .editable {
     background: none;
 }
 
-.afmbe-jesuisfrog option {
+.witchcraft option {
     background: rgb(228, 228, 228);
 }
 
@@ -81,7 +81,7 @@
     background: rgb(22, 22, 22);
 }
 
-.afmbe-jesuisfrog-dialog-menu {
+.witchcraft-dialog-menu {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -89,19 +89,19 @@
     color: black;
 }
 
-.afmbe-jesuisfrog h1{
+.witchcraft h1{
     border-bottom: none;
 }
 
-.afmbe-jesuisfrog h2.header-with-button{
+.witchcraft h2.header-with-button{
     border-bottom: none;
     background: var(--light-mode-colorbar);
 }
 
-.afmbe-jesuisfrog h1,
-.afmbe-jesuisfrog h2,
-.afmbe-jesuisfrog-dialog-menu h1,
-.afmbe-jesuisfrog-dialog-menu h2 {
+.witchcraft h1,
+.witchcraft h2,
+.witchcraft-dialog-menu h1,
+.witchcraft-dialog-menu h2 {
     font-family: "Jolly Roger";
     width: 100%;
 }
@@ -113,19 +113,19 @@
     color: red;
 }
 
-.afmbe-jesuisfrog .description-container .tox-tinymce{
+.witchcraft .description-container .tox-tinymce{
     min-height: 200px;
 }
 
 
 
-.afmbe-jesuisfrog-dialog-menu .menu-flex-container-row {
+.witchcraft-dialog-menu .menu-flex-container-row {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
 }
 
-.afmbe-jesuisfrog-dialog-menu .menu-flex-container {
+.witchcraft-dialog-menu .menu-flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -136,7 +136,7 @@
     gap: 5px;
 }
 
-.afmbe-jesuisfrog-dialog-menu .vertical-column {
+.witchcraft-dialog-menu .vertical-column {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,45 +146,45 @@
     text-align: center;
 }
 
-.afmbe-jesuisfrog-dialog-menu-text-box {
+.witchcraft-dialog-menu-text-box {
     display: flex;
     flex-direction: column;
     background: none;
     padding: 5px;
 }
 
-.afmbe-jesuisfrog-dialog-menu .attribute-input {
+.witchcraft-dialog-menu .attribute-input {
     width: 100%;
 }
 
-.afmbe-jesuisfrog-dialog-menu .table-center-align {
+.witchcraft-dialog-menu .table-center-align {
     text-align: center;
 }
 
-.afmbe-jesuisfrog-dialog-menu .table-bold-text {
+.witchcraft-dialog-menu .table-bold-text {
     font-weight: bold;
 }
 
-.afmbe-jesuisfrog-dialog-menu input,
-.afmbe-jesuisfrog-dialog-menu select {
+.witchcraft-dialog-menu input,
+.witchcraft-dialog-menu select {
     color: black;
     width: 100%;
 }
 
-.afmbe-jesuisfrog-dialog-menu option {
+.witchcraft-dialog-menu option {
     background: rgb(41, 50, 59);
 }
 
-.afmbe-dialog-menu table tbody td {
+.witchcraft-dialog-menu table tbody td {
     width: 50%;
 }
 
-.afmbe-dialog-menu table tbody td * {
+.witchcraft-dialog-menu table tbody td * {
     width: 100%;
 }
 
-.afmbe-jesuisfrog-tags-flex-container,
-.afmbe-jesuisfrog-tags-flex-container-item {
+.witchcraft-tags-flex-container,
+.witchcraft-tags-flex-container-item {
     color: black;
     display: flex;
     flex-direction: row;
@@ -195,7 +195,7 @@
     padding: 0 0 5px 0;
 }
 
-.afmbe-jesuisfrog-tags-flex-container div {
+.witchcraft-tags-flex-container div {
     background-color: rgba(131, 15, 15, 0.705);
     color: white;
     border-radius: 5px;
@@ -203,7 +203,7 @@
     max-width: 100%;
 }
 
-.afmbe-jesuisfrog-tags-flex-container-item div {
+.witchcraft-tags-flex-container-item div {
     background-color: rgba(0, 0, 0, 0.705);
     color: white;
     border-radius: 5px;
@@ -211,17 +211,17 @@
     max-width: 100%;
 }
 
-.afmbe-jesuisfrog h2 {
+.witchcraft h2 {
     margin: 0;
     font-size: 22px;
 }
 
-.afmbe-jesuisfrog .table-left-align {
+.witchcraft .table-left-align {
     text-align: left;
     padding: 0 0 0 10px;
 }
 
-.afmbe-jesuisfrog .header-with-button {
+.witchcraft .header-with-button {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -229,23 +229,23 @@
     gap: 5px;
 }
 
-.afmbe-jesuisfrog .header-with-button button {
+.witchcraft .header-with-button button {
     width: 30px;
     margin: 1px 1px;
 }
 
-.afmbe-jesuisfrog button:hover,
-.afmbe-jesuisfrog .item-name:hover,
-.afmbe-jesuisfrog .profile-img:hover {
+.witchcraft button:hover,
+.witchcraft .item-name:hover,
+.witchcraft .profile-img:hover {
     cursor: pointer;
 }
 
-.afmbe-jesuisfrog .item-name:hover {
+.witchcraft .item-name:hover {
     font-weight: bold;
     text-shadow: 0 0 10px var(--color-shadow-primary);
 }
 
-.afmbe-jesuisfrog .item-name-flex-container {
+.witchcraft .item-name-flex-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -253,33 +253,33 @@
     gap: 5px;
 }
 
-.afmbe-jesuisfrog .fa-dice-d20:hover {
+.witchcraft .fa-dice-d20:hover {
     cursor: pointer;
     color: darkred;
 }
 
-.afmbe-jesuisfrog .table-center-align,
-.afmbe-chat-roll-table .table-center-align{
+.witchcraft .table-center-align,
+.witchcraft-chat-roll-table .table-center-align{
     text-align: center;
 }
 
-.afmbe-jesuisfrog .table-flex-cell {
+.witchcraft .table-flex-cell {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
-.afmbe-jesuisfrog .table-flex-cell input {
+.witchcraft .table-flex-cell input {
     width: 30px;
 }
 
-.afmbe-jesuisfrog .table-equipped {
+.witchcraft .table-equipped {
     text-align: center;
     width: 50px;
 }
 
-.afmbe-jesuisfrog .item input {
+.witchcraft .item input {
     height: 15px;
     width: 15px;
 }
@@ -294,7 +294,7 @@
     font-family: "Jolly Roger"
 }
 
-.afmbe-jesuisfrog-chat-roll-table {
+.witchcraft-chat-roll-table {
     text-align: center;
     font-weight: bold;
 }
@@ -313,47 +313,47 @@
     font-family: "Jolly Roger";
 }
 
-.afmbe-jesuisfrog .bio-container .editor,
-.afmbe-jesuisfrog .contacts-container .editor {
+.witchcraft .bio-container .editor,
+.witchcraft .contacts-container .editor {
     height: 200px;
     width: 100%;
     margin-bottom: 5px;
 }
 
-.afmbe-jesuisfrog .bio-container h2,
-.afmbe-jesuisfrog .contacts-container h2,
-.afmbe-jesuisfrog .character-details-container h2,
-.afmbe-jesuisfrog .core-item-container h2,
-.afmbe-jesuisfrog .attribute-container h2 {
+.witchcraft .bio-container h2,
+.witchcraft .contacts-container h2,
+.witchcraft .character-details-container h2,
+.witchcraft .core-item-container h2,
+.witchcraft .attribute-container h2 {
     text-align: center;
     background: var(--light-mode-colorbar);
     border-bottom: none;
 }
 
 
-.afmbe-jesuisfrog .xp-container h2 {
+.witchcraft .xp-container h2 {
     border-bottom: none;
 }
 
-.afmbe-jesuisfrog .attributes-header div {
+.witchcraft .attributes-header div {
     text-align: center;
 }
 
-.afmbe-jesuisfrog .description-container .editor {
+.witchcraft .description-container .editor {
     width: 100%;
 }
 
-.afmbe-jesuisfrog .editor-content {
+.witchcraft .editor-content {
     min-height: 100px;
     max-height: 100%;
 }
 
-.afmbe-jesuisfrog .editor .tox-toolbar__group button {
+.witchcraft .editor .tox-toolbar__group button {
     background: rgba(190, 190, 190, 0.692);
     color: black;
 }
 
-.afmbe-jesuisfrog .editor .tox-edit-area {
+.witchcraft .editor .tox-edit-area {
     background: rgba(255, 255, 255, 0.808);
 }
 
@@ -361,7 +361,7 @@
         Character Sidebar
  ---------------------------------------------*/
 
-.afmbe-jesuisfrog .sheet-flex-container {
+.witchcraft .sheet-flex-container {
     display: flex;
     flex-direction: row;
     align-items: top;
@@ -371,7 +371,7 @@
     background: none;
 }
 
-.afmbe-jesuisfrog .sheet-sidebar {
+.witchcraft .sheet-sidebar {
     display: flex;
     flex-direction: column;
     min-width: 250px;
@@ -381,11 +381,11 @@
     background: none;
 }
 
-.afmbe-jesuisfrog .sheet-sidebar input {
+.witchcraft .sheet-sidebar input {
     text-align: center;
 }
 
-.afmbe-jesuisfrog .sheet-body {
+.witchcraft .sheet-body {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -394,27 +394,27 @@
     gap: 10px;
 }
 
-.afmbe-jesuisfrog .header-container {
+.witchcraft .header-container {
     position: relative;
     top: 0;
 }
 
-.afmbe-jesuisfrog .info-container {
+.witchcraft .info-container {
     display: flex;
     flex-direction: column;
 }
 
-.afmbe-jesuisfrog .polaroid-container {
+.witchcraft .polaroid-container {
     position: relative;
 }
 
-.afmbe-jesuisfrog .polaroid {
+.witchcraft .polaroid {
     height: 250px;
     border: none;
     z-index: -1;
 }
 
-.afmbe-jesuisfrog .profile-img {
+.witchcraft .profile-img {
     position: absolute;
     top: 30px;
     left: 32px;
@@ -425,7 +425,7 @@
     z-index: 1;
 }
 
-.afmbe-jesuisfrog #sheet-logo {
+.witchcraft #sheet-logo {
     position: absolute;
     top: 0;
     left: 0;
@@ -434,7 +434,7 @@
     z-index: +2;
 }
 
-.afmbe-jesuisfrog .sheet-nav-container {
+.witchcraft .sheet-nav-container {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -445,36 +445,36 @@
     border-radius: 3px;
 }
 
-.afmbe-jesuisfrog .sheet-nav {
+.witchcraft .sheet-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
     border: none !important;
 }
 
-.afmbe-jesuisfrog .sheet-nav a {
+.witchcraft .sheet-nav a {
     padding: 0 10px;
 }
 
-.afmbe-jesuisfrog .sheet-nav .active {
+.witchcraft .sheet-nav .active {
     text-decoration: underline;
 }
 
-.afmbe-jesuisfrog .profile-tags-container {
+.witchcraft .profile-tags-container {
     position: absolute;
     bottom: 0;
     left: 0;
     z-index: 3;
 }
 
-.afmbe-jesuisfrog .profile-tags-container .tags-flex-container {
+.witchcraft .profile-tags-container .tags-flex-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
 }
 
-.afmbe-jesuisfrog .tags-flex-container .tag {
+.witchcraft .tags-flex-container .tag {
     border-radius: 5px;
     background: rgba(124, 118, 118, 0.493);
     color: darkred;
@@ -482,7 +482,7 @@
     font-size: smaller;
 }
 
-.afmbe-jesuisfrog .xp-container {
+.witchcraft .xp-container {
     position: absolute;
     top: 0;
     right: 0;
@@ -490,32 +490,32 @@
     text-align: center;
 }
 
-.afmbe-jesuisfrog .xp-flex-container {
+.witchcraft .xp-flex-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.afmbe-jesuisfrog .xp-flex-container input {
+.witchcraft .xp-flex-container input {
     margin-top: 2px
 }
 
-.afmbe-jesuisfrog .charname {
+.witchcraft .charname {
     width: 100%;
 }
 
-.afmbe-jesuisfrog .attribute-container {
+.witchcraft .attribute-container {
     margin: 0 0 10px 0;
 }
 
-.afmbe-jesuisfrog .resource-container {
+.witchcraft .resource-container {
     display: flex;
     flex-direction: column;
     padding: 0 5px;
 }
 
-.afmbe-jesuisfrog .resource {
+.witchcraft .resource {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -525,7 +525,7 @@
     padding: 5px 0;
 }
 
-.afmbe-jesuisfrog .resource-values {
+.witchcraft .resource-values {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -535,19 +535,19 @@
     width: 50%;
 }
 
-.afmbe-jesuisfrog .resource .attribute input {
+.witchcraft .resource .attribute input {
     width: 75%;
     height: 20px;
     color: black;
 }
 
-.afmbe-jesuisfrog .resource .secondaryAttribute input {
+.witchcraft .resource .secondaryAttribute input {
     width: 50px;
     height: 20px;
     color: black;
 }
 
-.afmbe-jesuisfrog .resource button {
+.witchcraft .resource button {
     width: 50%;
     height: 25px;
     line-height: 10px;
@@ -555,12 +555,12 @@
     border: 1px solid black;
 }
 
-.afmbe-jesuisfrog .resource button.no-focus {
+.witchcraft .resource button.no-focus {
     box-shadow: none;
     cursor: default;
 }
 
-.afmbe-jesuisfrog #characterTypeSelect {
+.witchcraft #characterTypeSelect {
     font-family: "Jolly Roger";
     font-size: x-large;
     text-align: center !important;
@@ -570,47 +570,47 @@
         Character Body Content
  ---------------------------------------------*/
 
-.afmbe-jesuisfrog .bio-container,
-.afmbe-jesuisfrog .contacts-container {
+.witchcraft .bio-container,
+.witchcraft .contacts-container {
     display: flex;
     flex-direction: column;
     margin-top: 15px;
 }
 
-.afmbe-jesuisfrog .core-item-container {
+.witchcraft .core-item-container {
     display: flex;
     flex-direction: row;
     align-items: top;
     gap: 10px;
 }
 
-.afmbe-jesuisfrog .core-item-container table td:first-child,
-.afmbe-jesuisfrog .weapon-table table td:first-child{
+.witchcraft .core-item-container table td:first-child,
+.witchcraft .weapon-table table td:first-child{
     padding-left: 10px;
 }
 
-.afmbe-jesuisfrog .character-details {
+.witchcraft .character-details {
     display: flex;
     flex-direction: row;
     gap: 10px;
 }
 
-.afmbe-jesuisfrog .character-detail {
+.witchcraft .character-detail {
     text-align: center;
     margin: 2px;
     min-width: 60px;
 }
 
-.afmbe-jesuisfrog .qualities-container,
-.afmbe-jesuisfrog .drawbacks-container,
-.afmbe-jesuisfrog .skills-container,
-.afmbe-jesuisfrog .powers-container,
-.afmbe-jesuisfrog .aspects-container {
+.witchcraft .qualities-container,
+.witchcraft .drawbacks-container,
+.witchcraft .skills-container,
+.witchcraft .powers-container,
+.witchcraft .aspects-container {
     width: 50%;
     border-radius: 3px;
 }
 
-.afmbe-jesuisfrog .equipment-header {
+.witchcraft .equipment-header {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -620,7 +620,7 @@
     background: rgba(114, 114, 114, 0.2);
 }
 
-.afmbe-jesuisfrog .encumbrance-resource {
+.witchcraft .encumbrance-resource {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -628,28 +628,28 @@
     font-family: "Jolly Roger";
 }
 
-.afmbe-jesuisfrog .encumbrance-resource div {
+.witchcraft .encumbrance-resource div {
     font-size: 20px;
 }
 
-.afmbe-jesuisfrog .weapon-table,
-.afmbe-jesuisfrog .qualities-container,
-.afmbe-jesuisfrog .drawbacks-container,
-.afmbe-jesuisfrog .skills-container,
-.afmbe-jesuisfrog .powers-container,
-.afmbe-jesuisfrog .aspects-container {
+.witchcraft .weapon-table,
+.witchcraft .qualities-container,
+.witchcraft .drawbacks-container,
+.witchcraft .skills-container,
+.witchcraft .powers-container,
+.witchcraft .aspects-container {
     margin: 10px 0 0 0;
 }
 
 
 
-.afmbe-jesuisfrog .item-table,
-.afmbe-jesuisfrog .item-table table,
-.afmbe-jesuisfrog .weapon-table table{
+.witchcraft .item-table,
+.witchcraft .item-table table,
+.witchcraft .weapon-table table{
     margin: 0;
 }
 
-.afmbe-jesuisfrog .armor-button-cell button {
+.witchcraft .armor-button-cell button {
     max-width: 75%;
     height: 18px;
     line-height: 10px;
@@ -659,18 +659,18 @@
         Item Sheets
  ---------------------------------------------*/
 
-.afmbe-jesuisfrog .item-sheet-container {
+.witchcraft .item-sheet-container {
     padding: 0 5px;
     background: rgb(41, 50, 59);
     height: 100%;
 }
 
-.afmbe-jesuisfrog .item-sheet-header {
+.witchcraft .item-sheet-header {
     display: flex;
     flex-direction: row;
 }
 
-.afmbe-jesuisfrog .item-header-container {
+.witchcraft .item-header-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -679,13 +679,13 @@
     gap: 10px;
 }
 
-.afmbe-jesuisfrog .item-img {
+.witchcraft .item-img {
     width: 50px;
     height: 50px;
     border: none;
 }
 
-.afmbe-jesuisfrog .item-resource-container {
+.witchcraft .item-resource-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -695,44 +695,44 @@
     text-align: center;
 }
 
-.afmbe-jesuisfrog .description-container table th {
+.witchcraft .description-container table th {
     width: 50%;
     text-align: left;
 }
 
-.afmbe-jesuisfrog .description-container table input {
+.witchcraft .description-container table input {
     text-align: center;
 }
 
-.afmbe-jesuisfrog .description-container {
+.witchcraft .description-container {
     display: flex;
     flex-direction: row;
     height: 100%;
 }
 
-.afmbe-jesuisfrog .item-description-sidebar {
+.witchcraft .item-description-sidebar {
     width: 100%;
     padding: 0 5px;
     border-left: 1px solid rgb(231, 231, 231);
 }
 
-.afmbe-jesuisfrog .item-attribute-sidebar {
+.witchcraft .item-attribute-sidebar {
     min-width: 40%;
     height: 100%;
     padding: 0 5px;
 }
 
-.afmbe-jesuisfrog .item-attribute-sidebar table{
+.witchcraft .item-attribute-sidebar table{
     border: none;
 }
 
-.afmbe-jesuisfrog .item-attribute-sidebar table select,
-.afmbe-jesuisfrog .item-attribute-sidebar table input {
+.witchcraft .item-attribute-sidebar table select,
+.witchcraft .item-attribute-sidebar table input {
     width: 100%;
     height: 20px;
 }
 
-.afmbe-jesuisfrog .item-attribute-flex-container {
+.witchcraft .item-attribute-flex-container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -743,11 +743,11 @@
         Limited Permission Sheets
  ---------------------------------------------*/
 
-.afmbe-jesuisfrog .blur {
+.witchcraft .blur {
     filter: blur(5px);
 }
 
-.afmbe-jesuisfrog .bio-container[limited="true"] .editor {
+.witchcraft .bio-container[limited="true"] .editor {
     height: auto;
 }
 
@@ -755,22 +755,22 @@
         Dark Mode Settings
  ---------------------------------------------*/
 
-.afmbe-jesuisfrog.sheet.actor.dark-mode .window-content,
-.afmbe-jesuisfrog.sheet.item.dark-mode .window-content,
-.afmbe-jesuisfrog.dark-mode .window-content {
+.witchcraft.sheet.actor.dark-mode .window-content,
+.witchcraft.sheet.item.dark-mode .window-content,
+.witchcraft.dark-mode .window-content {
     background: rgb(22, 22, 22);
     color: rgb(220, 220, 220);
 }
 
-.afmbe-jesuisfrog.sheet.actor.dark-mode .entity-link,
-.afmbe-jesuisfrog.sheet.actor.dark-mode .content-link,
-.afmbe-jesuisfrog.sheet.item.dark-mode .entity-link,
-.afmbe-jesuisfrog.sheet.item.dark-mode .content-link {
+.witchcraft.sheet.actor.dark-mode .entity-link,
+.witchcraft.sheet.actor.dark-mode .content-link,
+.witchcraft.sheet.item.dark-mode .entity-link,
+.witchcraft.sheet.item.dark-mode .content-link {
     color: black;
 }
 
-.afmbe-jesuisfrog.sheet.actor.dark-mode button,
-.afmbe-jesuisfrog.sheet.item.dark-mode button {
+.witchcraft.sheet.actor.dark-mode button,
+.witchcraft.sheet.item.dark-mode button {
     color: rgb(231, 231, 231);
     background: rgb(85, 85, 85);
     border: 1px solid black;
@@ -778,18 +778,18 @@
     line-height: 10px;
 }
 
-.afmbe-jesuisfrog.sheet.actor.dark-mode input,
-.afmbe-jesuisfrog.sheet.actor.dark-mode select,
-.afmbe-jesuisfrog.sheet.item.dark-mode input,
-.afmbe-jesuisfrog.sheet.item.dark-mode select {
+.witchcraft.sheet.actor.dark-mode input,
+.witchcraft.sheet.actor.dark-mode select,
+.witchcraft.sheet.item.dark-mode input,
+.witchcraft.sheet.item.dark-mode select {
     color: rgb(231, 231, 231);
 }
 
-.afmbe-jesuisfrog.sheet.item.dark-mode .window-content .editable {
+.witchcraft.sheet.item.dark-mode .window-content .editable {
     background: rgb(45, 51, 56);
 }
 
-.afmbe-jesuisfrog.dark-mode option {
+.witchcraft.dark-mode option {
     background: rgb(22, 22, 22);
 }
 
@@ -809,63 +809,63 @@
     border: 1px solid black;
 }
 
-.afmbe-jesuisfrog.dark-mode .sheet-flex-container {
+.witchcraft.dark-mode .sheet-flex-container {
     background: rgb(62, 64, 66);
 }
 
-.afmbe-jesuisfrog.dark-mode .sheet-sidebar {
+.witchcraft.dark-mode .sheet-sidebar {
     background: rgb(90, 93, 95);
 }
 
-.afmbe-jesuisfrog.dark-mode .bio-container h2,
-.afmbe-jesuisfrog.dark-mode .contacts-container h2,
-.afmbe-jesuisfrog.dark-mode .character-details-container h2,
-.afmbe-jesuisfrog.dark-mode .core-item-container h2,
-.afmbe-jesuisfrog.dark-mode .attribute-container h2,
-.afmbe-jesuisfrog.dark-mode h2.header-with-button {
+.witchcraft.dark-mode .bio-container h2,
+.witchcraft.dark-mode .contacts-container h2,
+.witchcraft.dark-mode .character-details-container h2,
+.witchcraft.dark-mode .core-item-container h2,
+.witchcraft.dark-mode .attribute-container h2,
+.witchcraft.dark-mode h2.header-with-button {
     background: var(--dark-mode-colorbar);
 }
 
-.afmbe-jesuisfrog.dark-mode .weapon-table,
-.afmbe-jesuisfrog.dark-mode .item-table,
-.afmbe-jesuisfrog.dark-mode .qualities-container,
-.afmbe-jesuisfrog.dark-mode .drawbacks-container,
-.afmbe-jesuisfrog.dark-mode .skills-container,
-.afmbe-jesuisfrog.dark-mode .powers-container,
-.afmbe-jesuisfrog.dark-mode .aspects-container {
+.witchcraft.dark-mode .weapon-table,
+.witchcraft.dark-mode .item-table,
+.witchcraft.dark-mode .qualities-container,
+.witchcraft.dark-mode .drawbacks-container,
+.witchcraft.dark-mode .skills-container,
+.witchcraft.dark-mode .powers-container,
+.witchcraft.dark-mode .aspects-container {
     background: rgba(78, 78, 78, 0.603);
 }
 
-.afmbe-jesuisfrog.dark-mode .equipment-header {
+.witchcraft.dark-mode .equipment-header {
     background: rgba(124, 118, 118, 0.493);
 }
 
-.afmbe-jesuisfrog.dark-mode tbody tr:nth-child(even) {
+.witchcraft.dark-mode tbody tr:nth-child(even) {
     background: rgba(46, 46, 46, 0.541);
 }
 
-.afmbe-jesuisfrog.dark-mode .sheet-nav-container {
+.witchcraft.dark-mode .sheet-nav-container {
     background: var(--dark-mode-colorbar);
 }
 
-.afmbe-jesuisfrog.dark-mode .item-description-sidebar {
+.witchcraft.dark-mode .item-description-sidebar {
     border-left: 1px solid rgb(0, 0, 0);
 }
 
-.afmbe-jesuisfrog.window-app.dialog.dark-mode .afmbe-jesuisfrog-dialog-menu {
+.witchcraft.window-app.dialog.dark-mode .witchcraft-dialog-menu {
     background: rgb(41, 50, 59);
     color: rgb(231, 231, 231);
 }
 
-.afmbe-jesuisfrog.window-app.dialog.dark-mode .afmbe-jesuisfrog-dialog-menu-text-box {
+.witchcraft.window-app.dialog.dark-mode .witchcraft-dialog-menu-text-box {
     background: rgba(124, 118, 118, 0.493);
 }
 
-.afmbe-jesuisfrog.window-app.dialog.dark-mode input,
-.afmbe-jesuisfrog.window-app.dialog.dark-mode select {
+.witchcraft.window-app.dialog.dark-mode input,
+.witchcraft.window-app.dialog.dark-mode select {
     color: rgb(231, 231, 231);
 }
 
-.afmbe-jesuisfrog.dark-mode .item-name:hover {
+.witchcraft.dark-mode .item-name:hover {
     font-weight: bold;
 }

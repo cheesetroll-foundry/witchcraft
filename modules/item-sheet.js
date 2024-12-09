@@ -1,9 +1,9 @@
-export class afmbeItemSheet extends ItemSheet {
+export class witchcraftItemSheet extends ItemSheet {
 
     /** @override */
     static get defaultOptions() {
         return foundry.utils.mergeObject(super.defaultOptions, {
-            classes: ["afmbe-jesuisfrog", "sheet", "item", `${game.settings.get("afmbe-jesuisfrog", "dark-mode") ? "dark-mode" : ""}`],
+            classes: ["witchcraft", "sheet", "item", `${game.settings.get("witchcraft", "dark-mode") ? "dark-mode" : ""}`],
             width: 600,
             height: 450,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body-items", initial: "description" }]
@@ -15,7 +15,7 @@ export class afmbeItemSheet extends ItemSheet {
 
     /** @override */
     get template() {
-        const path = "systems/afmbe-jesuisfrog/templates";
+        const path = "systems/witchcraft/templates";
         return `${path}/${this.item.type}-sheet.hbs`;
     }
 

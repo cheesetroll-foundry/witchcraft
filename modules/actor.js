@@ -1,4 +1,4 @@
-export class afmbeActor extends Actor {
+export class witchcraftActor extends Actor {
   async _preCreate(data, options, user) {
     await super._preCreate(data, options, user);
     if (data.type === "character") {

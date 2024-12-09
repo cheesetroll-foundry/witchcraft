@@ -1,4 +1,4 @@
-export class afmbeItem extends Item {
+export class witchcraftItem extends Item {
 
     async prepareData() {
         super.prepareData()
