@@ -11,11 +11,6 @@
         Fonts
  ---------------------------------------------*/
 
-@font-face {
-    font-family: "Jolly Roger";
-    src: url(../fonts/JollyLodger-Regular.ttf);
-}
-
 
 /* ------------------------------------------- 
         Global Styles
@@ -102,7 +97,6 @@
 .witchcraft h2,
 .witchcraft-dialog-menu h1,
 .witchcraft-dialog-menu h2 {
-    font-family: "Jolly Roger";
     width: 100%;
 }
 
@@ -290,9 +284,7 @@
 
 .chat-message h1,
 .chat-message h2,
-.chat-message .rule-of-chat-text {
-    font-family: "Jolly Roger"
-}
+.chat-message .rule-of-chat-text 
 
 .witchcraft-chat-roll-table {
     text-align: center;
@@ -309,9 +301,7 @@
  ---------------------------------------------*/
 
 .editor h1,
-.editor h2 {
-    font-family: "Jolly Roger";
-}
+.editor h2
 
 .witchcraft .bio-container .editor,
 .witchcraft .contacts-container .editor {
@@ -440,7 +430,6 @@
     right: 0;
     background: var(--light-mode-colorbar);
     z-index: 5;
-    font-family: "Jolly Roger";
     font-size: x-large;
     border-radius: 3px;
 }
@@ -561,7 +550,6 @@
 }
 
 .witchcraft #characterTypeSelect {
-    font-family: "Jolly Roger";
     font-size: x-large;
     text-align: center !important;
 }
@@ -625,7 +613,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: "Jolly Roger";
 }
 
 .witchcraft .encumbrance-resource div {
