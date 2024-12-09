@@ -1,0 +1,325 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="sheet-flex-container">
+        <div class="sheet-sidebar">
+            <div class="header-container">
+                <!--  <img id="sheet-logo" src="systems/afmbe-jesuisfrog/images/AFMBElogo.gif"> -->
+                <div class="polaroid-container">
+                    <img class="polaroid" src="systems/afmbe-jesuisfrog/images/polaroid.png">
+                    <img class="profile-img" data-edit="img" src="{{actor.img}}">
+                    <div class="sheet-nav-container">
+                        <nav class="sheet-nav sheet-tabs tabs" data-group="primary">
+                            <a class="item" data-tab="core">Core</a>
+                            <a class="item" data-tab="equipment">Equipment</a>
+                        </nav>
+                    </div>
+                    <div class="profile-tags-container">
+                        <div class="tags-flex-container"></div>
+                    </div>
+                </div>
+                <div class="header-info-container">
+                    <div class="info-container">
+                        <h1>
+                            <input class="charname" type="text" name="name" value="{{actor.name}}" placeholder="Name">
+                        </h1>
+                        <div class="attribute-container">
+                            <h2 id="attributes-header">
+                                <div>Primary Attributes</div>
+                            </h2>
+                            <div class="resource-container">
+                                <div class="resource">
+                                    <button class="attribute-roll" type="button"
+                                        data-attribute-name="Strength">Strength</button>
+                                    <div class="resource-values attribute">
+                                        <input type="number" name="system.strength.value"
+                                            value="{{actor.system.strength.value}}">
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button class="attribute-roll" type="button"
+                                        data-attribute-name="Dexterity">Dexterity</button>
+                                    <div class="resource-values attribute">
+                                        <input type="number" name="system.dexterity.value"
+                                            value="{{actor.system.dexterity.value}}">
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button class="attribute-roll" type="button"
+                                        data-attribute-name="Constitution">Constitution</button>
+                                    <div class="resource-values attribute">
+                                        <input type="number" name="system.constitution.value"
+                                            value="{{actor.system.constitution.value}}">
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button class="attribute-roll" type="button"
+                                        data-attribute-name="Intelligence">Intelligence</button>
+                                    <div class="resource-values attribute">
+                                        <input type="number" name="system.intelligence.value"
+                                            value="{{actor.system.intelligence.value}}">
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button class="attribute-roll" type="button"
+                                        data-attribute-name="Perception">Perception</button>
+                                    <div class="resource-values attribute">
+                                        <input type="number" name="system.perception.value"
+                                            value="{{actor.system.perception.value}}">
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button class="attribute-roll" type="button"
+                                        data-attribute-name="Willpower">Willpower</button>
+                                    <div class="resource-values attribute">
+                                        <input type="number" name="system.willpower.value"
+                                            value="{{actor.system.willpower.value}}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="attribute-container">
+                            <h2>Secondary Attributes</h2>
+                            <div class="resource-container">
+                                <div class="resource">
+                                    <button type="button" class="reset-resource" data-resource="hp">Life Points</button>
+                                    <div class="resource-values secondaryAttribute">
+                                        <input type="number" name="system.hp.value" value="{{actor.system.hp.value}}">
+                                        /
+                                        <div>{{actor.system.hp.max}}</div>
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button type="button" class="reset-resource"
+                                        data-resource="endurance_points">Endurance</button>
+                                    <div class="resource-values secondaryAttribute">
+                                        <input type="number" name="system.endurance_points.value"
+                                            value="{{actor.system.endurance_points.value}}">
+                                        /
+                                        <div>{{actor.system.endurance_points.max}}</div>
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button type="button" class="reset-resource" data-resource="essence">Essence
+                                        Pool</button>
+                                    <div class="resource-values secondaryAttribute">
+                                        <input type="number" name="system.essence.value"
+                                            value="{{actor.system.essence.value}}">
+                                        /
+                                        <div>{{actor.system.essence.max}}</div>
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button type="button">Speed</button>
+                                    <div class="resource-values secondaryAttribute">
+                                        <div>{{actor.system.speed.value}}mph</div>
+                                        <div>[{{actor.system.speed.halfValue}}m/sec]</div>
+                                    </div>
+                                </div>
+                                <div class="resource">
+                                    <button type="button">Initiative</button>
+                                    <div class="resource-values secondaryAttribute">
+                                        <div>{{actor.system.initiative.value}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="sheet-body">
+
+            {{!-- Core Tab --}}
+            <div class="tab core" data-group="primary" data-tab="core">
+                <div class="bio-container">
+                    <h2>Description</h2>
+                    {{editor actor.system.biography target="system.biography" button=true owner=owner
+                    editable=editable}}
+                </div>
+                <div class="skill-item-container">
+                    <div class="skills-container">
+                        <h2 id="skill-header" class="header-with-button">
+                            <button type="button" class="create-item" data-create="skill">+</button>
+                            <span>Skills</span>
+                        </h2>
+                        <table class="item-table">
+                            <thead>
+                                <tr>
+                                    <th class="table-left-align">Name</th>
+                                    <th>Level</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each actor.skill as |item id|}}
+                                <tr class="item" data-item-id="{{item._id}}">
+                                    <td class="item-name">{{item.name}}</td>
+                                    <td class="table-center-align">{{item.system.level}}</td>
+                                    <td class="table-center-align"><a class="item-control item-delete"
+                                            title="Delete Item"><i class="fas fa-trash"></i></a></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="powers-container">
+                        <h2 id="aspect-header" class="header-with-button">
+                            <button type="button" class="create-item" data-create="aspect">+</button>
+                            <span>Aspects</span>
+                        </h2>
+                        <table class="item-table">
+                            <thead>
+                                <tr>
+                                    <th class="table-left-align">Name</th>
+                                    <th>Power</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {{#each actor.aspect as |item id|}}
+                                <tr class="item" data-item-id="{{item._id}}">
+                                    <td class="item-name">{{item.name}}</td>
+                                    <td class="table-center-align">{{item.system.power}}</td>
+                                    <td class="table-center-align"><a class="item-control item-delete"
+                                            title="Delete Item"><i class="fas fa-trash"></i></a></td>
+                                </tr>
+                                {{/each}}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            {{!-- Equipment Tab --}}
+            <div class="tab equipment" data-group="primary" data-tab="equipment">
+                <div class="equipment-header">
+                    <div class="encumbrance-resource">
+                        <h2>Lifting Capacity</h2>
+                        <div>{{actor.system.encumbrance.lifting_capacity}} lbs</div>
+                    </div>
+                    <div class="encumbrance-resource">
+                        <h2>Current Weight</h2>
+                        <div>{{actor.system.encumbrance.value}} lbs</div>
+                    </div>
+                    <div class="encumbrance-resource">
+                        <h2>Max Carry Limit</h2>
+                        <div>{{actor.system.encumbrance.max}} lbs</div>
+                    </div>
+                </div>
+
+                <div class="weapon-table">
+                    <h2 class="header-with-button">
+                        <button type="button" class="create-item" data-create="weapon">+</button>
+                        <span>Weapons</span>
+                    </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table-left-align">Name</th>
+                                <th>Damage</th>
+                                <th>Capacity</th>
+                                <th>EV</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each actor.weapon as |item id|}}
+                            <tr class="item" data-item-id="{{item._id}}">
+                                <td>
+                                    <div class="item-name-flex-container">
+                                        <i class="fas fa-dice-d20 damage-roll"></i>
+                                        <div class="item-name">{{item.name}}</div>
+                                    </div>
+                                </td>
+                                <td class="table-center-align">{{item.system.damage_string}}</td>
+                                <td>
+                                    <div class="table-flex-cell">
+                                        <div>{{item.system.capacity.value}}</div>
+                                        /
+                                        <div>{{item.system.capacity.max}}</div>
+                                    </div>
+                                </td>
+                                <td class="table-center-align">{{item.system.encumbrance}}</td>
+                                <td class="table-center-align"><a class="item-control item-delete"
+                                        title="Delete Item"><i class="fas fa-trash"></i></a></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="item-table">
+                    <h2 class="header-with-button">
+                        <button type="button" class="create-item" data-create="item">+</button>
+                        <span>Equipped Items</span>
+                    </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table-left-align">Name</th>
+                                <th>Qty</th>
+                                <th>Armor Value</th>
+                                <th>EV</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each actor.equippedItem as |item id|}}
+                            <tr class="item" data-item-id="{{item._id}}">
+                                <td>
+                                    <div class="item-name-flex-container">
+                                        <input type="checkbox" class="toggleEquipped" {{checked item.system.equipped}}>
+                                        <div class="item-name">{{item.name}}</div>
+                                    </div>
+                                </td>
+                                <td class="table-center-align">{{item.system.qty}}</td>
+                                <td class="table-center-align armor-button-cell">
+                                    <button type="button">{{item.system.armor_value}}</button>
+                                </td>
+                                <td class="table-center-align">{{item.system.encumbrance}}</td>
+                                <td class="table-center-align"><a class="item-control item-delete"
+                                        title="Delete Item"><i class="fas fa-trash"></i></a></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="item-table">
+                    <h2 class="header-with-button">
+                        <button type="button" class="create-item" data-create="item">+</button>
+                        <span>Items</span>
+                    </h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th class="table-left-align">Name</th>
+                                <th>Qty</th>
+                                <th>EV</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {{#each actor.item as |item id|}}
+                            <tr class="item" data-item-id="{{item._id}}">
+                                <td>
+                                    <div class="item-name-flex-container">
+                                        <input type="checkbox" class="toggleEquipped" {{checked item.system.equipped}}>
+                                        <div class="item-name">{{item.name}}</div>
+                                    </div>
+                                </td>
+                                <td class="table-center-align">{{item.system.qty}}</td>
+                                <td class="table-center-align">{{item.system.encumbrance}}</td>
+                                <td class="table-center-align"><a class="item-control item-delete"
+                                        title="Delete Item"><i class="fas fa-trash"></i></a></td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </div>
+</form>

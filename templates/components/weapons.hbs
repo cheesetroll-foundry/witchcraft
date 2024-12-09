@@ -1,0 +1,40 @@
+<div class="weapon-table">
+    <h2 class="header-with-button">
+        <button type="button" class="create-item" data-create="weapon">+</button>
+        <span>Weapons</span>
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="table-left-align">Name</th>
+                <th>Damage</th>
+                <th>Capacity</th>
+                <th>EV</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each actor.weapon as |item id|}}
+            <tr class="item" data-item-id="{{item._id}}">
+                <td>
+                    <div class="item-name-flex-container">
+                        <i class="fas fa-dice-d20 damage-roll"></i>
+                        <div class="item-name">{{item.name}}</div>
+                    </div>
+                </td>
+                <td class="table-center-align">{{item.system.damage_string}}</td>
+                <td>
+                    <div class="table-flex-cell">
+                        <div>{{item.system.capacity.value}}</div>
+                        /
+                        <div>{{item.system.capacity.max}}</div>
+                    </div>
+                </td>
+                <td class="table-center-align">{{item.system.encumbrance}}</td>
+                <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
+                            class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

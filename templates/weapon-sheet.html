@@ -1,0 +1,79 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="item-sheet-header">
+        <h1 class="item-header-container">
+            <img class="item-img" src="{{item.img}}" data-edit="img">
+            <input type="text" name="name" value="{{item.name}}" placeholder="Name">
+        </h1>
+    </div>
+
+    <section>
+        <div class="description-container">
+            <div class="item-attribute-sidebar">
+                <h2>Attributes</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Range</th>
+                            <td><input type="text" name="system.range" value="{{item.system.range}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Damage</th>
+                            <td><input type="text" name="system.damage" value="{{item.system.damage}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Damage Multiplier</th>
+                            <td>
+                                <select id="damage_cha_multiplier" name="system.damage_cha_multiplier">
+                                    {{#selectOptions item.system.damage_characteristics selected=item.system.damage_cha_multiplier}}
+                                    {{/selectOptions}}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Damage Multiplier Modifier</th>
+                            <td>
+                                <input type="number" id="damage_cha_multiplier_modifier" name="system.damage_cha_multiplier_modifier" value="{{item.system.damage_cha_multiplier_modifier}}" min="-5" max="5" step="1" data-type="Number">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Damage Type</th>
+                            <td>
+                                <select id="damageTypeSelect" name="system.damage_type" data-type="String">
+                                    {{#selectOptions item.system.damage_types selected=item.system.damage_type}}
+                                    {{/selectOptions}}
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Ammo Type</th>
+                            <td><input type="text" name="system.ammo_type" value="{{item.system.ammo_type}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Capacity</th>
+                            <td>
+                                <div class="item-name-flex-container">
+                                    <input type="number" name="system.capacity.value" value="{{item.system.capacity.value}}">
+                                    <input type="number" name="system.capacity.max" value="{{item.system.capacity.max}}">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>EV</th>
+                            <td><input type="number" name="system.encumbrance" value="{{item.system.encumbrance}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Cost</th>
+                            <td><input type="number" name="system.cost" value="{{item.system.cost}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="item-description-sidebar">
+                <h2 class="item-desc">Description</h2>
+                {{editor item.system.description target="system.description" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </section>
+</form>

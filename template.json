@@ -1,0 +1,316 @@
+{
+    "Actor": {
+        "types": [
+            "character",
+            "creature",
+            "vehicle"
+        ],
+        "templates": {
+            "attributes": {
+                "primaryAttributes":{
+                    "strength": {
+                        "value": 0,
+                        "halfValue": 0,
+                        "max": 0
+                    },
+                    "dexterity": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "constitution": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "intelligence": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "perception": {
+                        "value": 0,
+                        "max": 0
+                    },
+                    "willpower": {
+                        "value": 0,
+                        "max": 0
+                    }                  
+                },
+                "secondaryAttributes":{
+                    "hp": {
+                        "value": 0,
+                        "max": 0,
+                        "loss_toggle": false,
+                        "loss_penalty": 0
+                    },
+                    "endurance_points": {
+                        "value": 0,
+                        "max": 0,
+                        "loss_toggle": false,
+                        "loss_penalty": 0
+                    },
+                    "essence": {
+                        "value": 0,
+                        "max": 0,
+                        "loss_toggle": false,
+                        "loss_penalty": 0
+                    },
+                    "speed": {
+                        "value": 0,
+                        "max": 0,
+                        "loss_toggle": false,
+                        "loss_penalty": 0
+                    },
+                    "initiative": {
+                        "value": 0
+                    }
+                },
+                "encumbrance": {
+                    "value": 0,
+                    "max": 0,
+                    "lifting_capacity": 0,
+                    "level": 0
+                }
+            },
+            "character":{
+                "characterType": 0,
+                "characterTypes": [
+                    "Norm",
+                    "Survivor",
+                    "Inspired"
+                ],
+                "characterTypeValues": {
+                    "Norm": {
+                        "attributePoints": {
+                            "value": 0,
+                            "max": 14
+                        },
+                        "qualityPoints": {
+                            "value": 0,
+                            "max": 5
+                        },
+                        "drawbackPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "skillPoints": {
+                            "value": 0,
+                            "max": 30
+                        },
+                        "metaphysicsPoints": {
+                            "value": 0,
+                            "max": 0
+                        }
+                    },
+                    "Survivor": {
+                        "attributePoints": {
+                            "value": 0,
+                            "max": 20
+                        },
+                        "qualityPoints": {
+                            "value": 0,
+                            "max": 15
+                        },
+                        "drawbackPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "skillPoints": {
+                            "value": 0,
+                            "max": 35
+                        },
+                        "metaphysicsPoints": {
+                            "value": 0,
+                            "max": 0
+                        }
+                    },
+                    "Inspired": {
+                        "attributePoints": {
+                            "value": 0,
+                            "max": 20
+                        },
+                        "qualityPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "drawbackPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "skillPoints": {
+                            "value": 0,
+                            "max": 25
+                        },
+                        "metaphysicsPoints": {
+                            "value": 0,
+                            "max": 15
+                        }
+                    }
+                },
+                "character_points": {
+                    "value": 0,
+                    "max": 0
+                }
+            },
+            "details":{
+                "bio": {
+                    "gender": "",
+                    "age": 0,
+                    "height": "",
+                    "weight": 0,
+                    "hair": "",
+                    "eyes": "",
+                    "biography": "",
+                    "contacts": ""
+                }
+            }
+        },
+        "character": {
+            "templates": [
+                "attributes",
+                "character",
+                "details"
+            ]
+        },
+        "creature": {
+            "templates": [
+                "attributes"
+            ],
+            "power": 0
+        },
+        "vehicle": {
+            "weight": 0,
+            "speed": 0,
+            "acceleration": 0,
+            "range": 0,
+            "toughness": 0,
+            "handling": 0,
+            "accuracy": 0,
+            "cost": 0,
+            "availabilityOptions":["Common", "Uncommon", "Rare"],
+            "availability": "",
+            "damage_capacity": 0,
+            "armor_value": 0
+        }
+    },
+    "Item": {
+        "types": [
+            "quality",
+            "drawback",
+            "skill",
+            "power",
+            "weapon",
+            "item",
+            "aspect"
+        ],
+        "templates": {
+            "weapon": {
+                "range": "",
+                "damage": "0",
+                "damage_cha_multiplier": "none",
+                "damage_cha_multiplier_modifier": 0,
+                "damage_string": "0",
+                "ammo_type": "",
+                "damage_type": "none",
+                "damage_types": [
+                    "None",
+                    "Two-Handed",
+                    "Slashing",
+                    "Stabbing",
+                    "Normal Bullet",
+                    "Hollow Point",
+                    "Armor Piercing",
+                    "Shotgun",
+                    "Explosive",
+                    "Poison",
+                    "Corrosive"
+                ],
+                "damage_types_obj": {
+                    "none": "None",
+                    "twoHanded": "Two-Handed",
+                    "slashing": "Slashing",
+                    "stabbing": "Stabbing",
+                    "bullets": "Normal Bullet",
+                    "hollowPoint": "Hollow Point",
+                    "armorPiercing": "Armor Piercing",
+                    "shotgun": "Shotgun",
+                    "explosive": "Explosive",
+                    "poison": "Poison",
+                    "corrosive": "Corrosive"
+                },
+                "damage_characteristics": {
+                    "none": "None",
+                    "strength": "Strength",
+                    "dexterity": "Dexterity",
+                    "constitution": "Constitution",
+                    "intelligence": "Intelligence",
+                    "perception": "Perception",
+                    "willpower": "Willpower"
+                },
+                "capacity": {
+                    "value": 0,
+                    "max": 0
+                }
+            },
+            "common": {
+                "encumbrance": 0,
+                "cost": 0,
+                "availability": "",
+                "availabilityOptions": [
+                    "Common",
+                    "Uncommon",
+                    "Rare"
+                ],
+                "description": "",
+                "resource_bonus": {
+                    "bonus": 0,
+                    "hp": 0,
+                    "endurance_points": 0,
+                    "speed": 0,
+                    "essence": 0,
+                    "initiative": 0
+                }
+            }
+        },
+        "quality": {
+            "templates": [
+                "common"
+            ]
+        },
+        "drawback": {
+            "templates": [
+                "common"
+            ]
+        },
+        "skill": {
+            "templates": [
+                "common"
+            ],
+            "level": 0
+        },
+        "power": {
+            "templates": [
+                "common"
+            ],
+            "level": 0
+        },
+        "weapon": {
+            "templates": [
+                "common",
+                "weapon"
+            ]
+        },
+        "item": {
+            "templates": [
+                "common"
+            ],
+            "equipped": false,
+            "armor_value": "0",
+            "qty": 1
+        },
+        "aspect": {
+            "templates": [
+                "common"
+            ],
+            "power": 0
+        }
+    }
+}

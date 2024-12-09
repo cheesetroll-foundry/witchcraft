@@ -1,0 +1,39 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="item-sheet-header">
+        <h1 class="item-header-container">
+            <img class="item-img" src="{{item.img}}" data-edit="img">
+            <input type="text" name="name" value="{{item.name}}" placeholder="Name">
+        </h1>
+    </div>
+
+    <section>
+        <div class="description-container">
+            <div class="item-resource-container">
+                <div class="item-resource">
+                    <div>Power</div>
+                    <input type="number" name="data.power" value="{{data.power}}">
+                </div>
+                <div class="item-resource">
+                    <div>HP+</div>
+                    <input type="number" name="data.resource_bonus.hp" value="{{data.resource_bonus.hp}}">
+                </div>
+                <div class="item-resource">
+                    <div>Endurance+</div>
+                    <input type="number" name="data.resource_bonus.endurance_points" value="{{data.resource_bonus.endurance_points}}">
+                </div>
+                <div class="item-resource">
+                    <div>Speed+</div>
+                    <input type="number" name="data.resource_bonus.speed" value="{{data.resource_bonus.speed}}">
+                </div>
+                <div class="item-resource">
+                    <div>Essence+</div>
+                    <input type="number" name="data.resource_bonus.essence" value="{{data.resource_bonus.essence}}">
+                </div>
+            </div>
+            <h2 class="item-desc">Description</h2>
+            {{editor content=data.description target="data.description" button=true owner=owner editable=editable}}
+        </div>
+    </section>
+</form>

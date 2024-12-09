@@ -1,0 +1,22 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    {{> "systems/afmbe-jesuisfrog/templates/components/item-sheet-header.hbs"}}
+
+    <section>
+        <div class="description-container">
+            <div class="item-attribute-sidebar">
+                <h2>Attributes</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Level</th>
+                            <td><input type="number" name="system.level" value="{{item.system.level}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            {{> "systems/afmbe-jesuisfrog/templates/components/item-description-sidebar.hbs"}}
+        </div>
+    </section>
+</form>

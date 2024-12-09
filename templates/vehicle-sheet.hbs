@@ -1,0 +1,44 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="sheet-flex-container">
+        <div class="sheet-sidebar">
+            <div class="header-container">
+                <div class="polaroid-container">
+                    <img class="polaroid" src="systems/afmbe-jesuisfrog/images/polaroid.png">
+                    <img class="profile-img" data-edit="img" src="{{actor.img}}">
+                    <div class="sheet-nav-container" hidden>
+                        <nav class="sheet-nav sheet-tabs tabs" data-group="primary">
+                            <a class="item" data-tab="core">Core</a>
+                        </nav>
+                    </div>
+                    <div class="profile-tags-container">
+                        <div class="tags-flex-container"></div>
+                    </div>
+                </div>
+                <div class="header-info-container">
+                    <div class="info-container">
+                        <h1>
+                            <input class="charname" type="text" name="name" value="{{actor.name}}" placeholder="Name">
+                        </h1>
+                        {{> "systems/afmbe-jesuisfrog/templates/components/vehicle-attributes.hbs"}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="sheet-body">
+
+            {{!-- Core Tab --}}
+            <div class="tab core" data-group="primary" data-tab="core">
+                
+                {{> "systems/afmbe-jesuisfrog/templates/components/weapons.hbs"}}
+
+                {{> "systems/afmbe-jesuisfrog/templates/components/items.hbs"}}
+
+                {{> "systems/afmbe-jesuisfrog/templates/components/biography.hbs"}}
+
+            </div>
+
+        </section>
+    </div>
+</form>

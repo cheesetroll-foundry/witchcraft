@@ -1,0 +1,50 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="item-sheet-header">
+        <h1 class="item-header-container">
+            <img class="item-img" src="{{item.img}}" data-edit="img">
+            <input type="text" name="name" value="{{item.name}}" placeholder="Name">
+        </h1>
+    </div>
+
+    <section>
+        <div class="description-container">
+            <div class="item-attribute-sidebar">
+                <h2>Attributes</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Power</th>
+                            <td><input type="number" name="system.power" value="{{item.system.power}}"></td>
+                        </tr>
+                        <tr>
+                            <th>HP+</th>
+                            <td><input type="number" name="system.resource_bonus.hp" value="{{item.system.resource_bonus.hp}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Endurance+</th>
+                            <td><input type="number" name="system.resource_bonus.endurance_points" value="{{item.system.resource_bonus.endurance_points}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Speed+</th>
+                            <td><input type="number" name="system.resource_bonus.speed" value="{{item.system.resource_bonus.speed}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Essence+</th>
+                            <td><input type="number" name="system.resource_bonus.essence" value="{{item.system.resource_bonus.essence}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Initiative+</th>
+                            <td><input type="number" name="system.resource_bonus.initiative" value="{{item.system.resource_bonus.initiative}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="item-description-sidebar">
+                <h2 class="item-desc">Description</h2>
+                {{editor item.system.description target="system.description" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </section>
+</form>

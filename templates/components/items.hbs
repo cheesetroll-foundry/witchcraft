@@ -1,0 +1,69 @@
+<div class="item-table">
+    <h2 class="header-with-button">
+        <button type="button" class="create-item" data-create="item">+</button>
+        <span>Equipped Items</span>
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="table-left-align">Name</th>
+                <th>Qty</th>
+                <th>Armor Value</th>
+                <th>EV</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each actor.equippedItem as |item id|}}
+            <tr class="item" data-item-id="{{item._id}}">
+                <td>
+                    <div class="item-name-flex-container">
+                        <input type="checkbox" class="toggleEquipped" {{checked item.system.equipped}}>
+                        <div class="item-name">{{item.name}}</div>
+                    </div>
+                </td>
+                <td class="table-center-align">{{item.system.qty}}</td>
+                <td class="table-center-align armor-button-cell">
+                    <button type="button">{{item.system.armor_value}}</button>
+                </td>
+                <td class="table-center-align">{{item.system.encumbrance}}</td>
+                <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
+                            class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
+
+<div class="item-table">
+    <h2 class="header-with-button">
+        <button type="button" class="create-item" data-create="item">+</button>
+        <span>Items</span>
+    </h2>
+    <table>
+        <thead>
+            <tr>
+                <th class="table-left-align">Name</th>
+                <th>Qty</th>
+                <th>EV</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each actor.item as |item id|}}
+            <tr class="item" data-item-id="{{item._id}}">
+                <td>
+                    <div class="item-name-flex-container">
+                        <input type="checkbox" class="toggleEquipped" {{checked item.system.equipped}}>
+                        <div class="item-name">{{item.name}}</div>
+                    </div>
+                </td>
+                <td class="table-center-align">{{item.system.qty}}</td>
+                <td class="table-center-align">{{item.system.encumbrance}}</td>
+                <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
+                            class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

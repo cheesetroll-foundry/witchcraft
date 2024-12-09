@@ -1,0 +1,50 @@
+<form class="{{cssClass}}" autocomplete="off">
+
+    {{!-- Sheet Header --}}
+    <div class="item-sheet-header">
+        <h1 class="item-header-container">
+            <img class="item-img" src="{{item.img}}" data-edit="img">
+            <input type="text" name="name" value="{{item.name}}" placeholder="Name">
+        </h1>
+    </div>
+
+    <section>
+        <div class="description-container">
+            <div class="item-attribute-sidebar">
+                <h2>Attributes</h2>
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Equipped</th>
+                            <td>
+                                <div class="item-attribute-flex-container">
+                                    <input type="checkbox" name="system.equipped" {{checked item.system.equipped}}>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Quantity</th>
+                            <td><input type="text" name="system.qty" value="{{item.system.qty}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Armor Value</th>
+                            <td><input type="text" name="system.armor_value" value="{{item.system.armor_value}}"></td>
+                        </tr>
+                        <tr>
+                            <th>EV</th>
+                            <td><input type="number" name="system.encumbrance" value="{{item.system.encumbrance}}"></td>
+                        </tr>
+                        <tr>
+                            <th>Cost</th>
+                            <td><input type="number" name="system.cost" value="{{item.system.cost}}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="item-description-sidebar">
+                <h2 class="item-desc">Description</h2>
+                {{editor item.system.description target="system.description" button=true owner=owner editable=editable}}
+            </div>
+        </div>
+    </section>
+</form>

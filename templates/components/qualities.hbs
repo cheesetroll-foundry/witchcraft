@@ -1,0 +1,25 @@
+<div class="qualities-container">
+    <h2 id="quality-header" class="header-with-button">
+        <button type="button" class="create-item" data-create="quality">+</button>
+        <span>Qualities</span>
+    </h2>
+    <table class="item-table">
+        <thead>
+            <tr>
+                <th class="table-left-align">Name</th>
+                <th>Bonus</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each actor.quality as |item id|}}
+            <tr class="item" data-item-id="{{item._id}}">
+                <td class="item-name">{{item.name}}</td>
+                <td class="table-center-align">{{item.system.bonus}}</td>
+                <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
+                            class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
