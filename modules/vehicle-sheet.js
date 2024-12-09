@@ -155,7 +155,7 @@ export class witchcraftvehicleSheet extends ActorSheet {
                             </div>`
 
         ChatMessage.create({
-            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            type: CONST.CHAT_MESSAGE_STYLES.ROLL,
             user: game.user.id,
             speaker: ChatMessage.getSpeaker(),
             content: chatContent,
@@ -191,7 +191,7 @@ export class witchcraftvehicleSheet extends ActorSheet {
                             </div>`
 
         ChatMessage.create({
-            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            type: CONST.CHAT_MESSAGE_STYLES.ROLL,
             user: game.user.id,
             speaker: ChatMessage.getSpeaker(),
             content: chatContent,

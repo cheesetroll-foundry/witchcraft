@@ -228,8 +228,8 @@ export class witchcraftActorSheet extends ActorSheet {
                                     <p>Apply modifiers from the character's applicable Qualities, Drawbacks, or Skills.</p>
                                     
                                     <ul>
-                                        <li>Simple Test: 2x Attribute</li>
                                         <li>Difficult Test: 1x Attribute</li>
+                                        <li>Simple Test: 2x Attribute</li>
                                     </ul>
                                 </div>
                             </div>
@@ -245,8 +245,8 @@ export class witchcraftActorSheet extends ActorSheet {
                                         <td class="table-bold-text">Attribute Test</td>
                                         <td>
                                             <select id="attributeTestSelect" name="attributeTest">
-                                                <option value="Simple">Simple</option>
                                                 <option value="Difficult">Difficult</option>
+                                                <option value="Simple">Simple</option>
                                             </select>
                                         </td>
                                     </tr>
@@ -363,7 +363,7 @@ export class witchcraftActorSheet extends ActorSheet {
                                                         <tr>
                                                             <td class="table-center-align" data-roll="dice-result">[[${roll.result}]]</td>
                                                             <td class="table-center-align" data-roll="modifier">${rollMod}</td>
-                                                            <td class="table-center-align" data-roll="dice-total" data-roll-value="${totalResult}">${totalResult + rollMod}</td>
+                                                            <td class="table-center-align" data-roll="dice-total" data-roll-value="${totalResult}">${totalResult}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -374,7 +374,7 @@ export class witchcraftActorSheet extends ActorSheet {
                                             </form>`
 
                         ChatMessage.create({
-                            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+                            type: CONST.CHAT_MESSAGE_STYLES.ROLL,
                             user: game.user.id,
                             speaker: ChatMessage.getSpeaker(),
                             content: chatContent,
@@ -490,7 +490,7 @@ export class witchcraftActorSheet extends ActorSheet {
                                             </div>`
 
                         ChatMessage.create({
-                            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+                            type: CONST.CHAT_MESSAGE_STYLES.ROLL,
                             user: game.user.id,
                             speaker: ChatMessage.getSpeaker(),
                             flavor: `<div class="witchcraft-tags-flex-container-item">${tags.join('')}</div>`,
@@ -535,7 +535,7 @@ export class witchcraftActorSheet extends ActorSheet {
                             </div>`
 
         ChatMessage.create({
-            type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+            type: CONST.CHAT_MESSAGE_STYLES.ROLL,
             user: game.user.id,
             speaker: ChatMessage.getSpeaker(),
             content: chatContent,

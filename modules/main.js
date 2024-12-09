@@ -147,7 +147,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
                                 </form>`
 
             ChatMessage.create({
-                type: CONST.CHAT_MESSAGE_TYPES.ROLL,
+                type: CONST.CHAT_MESSAGE_STYLES.ROLL,
                 user: game.user.id,
                 speaker: ChatMessage.getSpeaker(),
                 flavor: `<div class="witchcraft-tags-flex-container">${tags.join('')}</div>`,
