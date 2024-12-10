@@ -417,24 +417,24 @@
 }
 
 .witchcraft .sheet-nav-container {
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     background: var(--light-mode-colorbar);
-    z-index: 5;
     font-size: large;
-    border-radius: 3px;
+    width: 45%;
 }
 
 .witchcraft .sheet-nav {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     border: none !important;
+    margin: 0 !important;
 }
 
 .witchcraft .sheet-nav a {
-    padding: 0 10px;
+
 }
 
 .witchcraft .sheet-nav .active {
@@ -464,22 +464,21 @@
 }
 
 .witchcraft .xp-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50px;
-    text-align: center;
+    position: relative;
+    width: 25%;
+    text-align: right;
+    align-self: center;
 }
 
 .witchcraft .xp-flex-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
 
 .witchcraft .xp-flex-container input {
-    margin-top: 2px
+    margin-left: 5px
 }
 
 .witchcraft .charname {
@@ -549,6 +548,17 @@
 /* ------------------------------------------- 
         Character Body Content
  ---------------------------------------------*/
+
+.witchcraft .character-type-selector {
+	position: relative;
+	width: 30%;
+	align-self: center;
+}
+
+.witchcraft .sheet-body-header {
+	display: flex;
+	flex-direction: row;
+}
 
 .witchcraft .bio-container,
 .witchcraft .contacts-container {

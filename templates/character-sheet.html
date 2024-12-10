@@ -7,24 +7,8 @@
                 <!-- <img id="sheet-logo" src="systems/witchcraft/images/AFMBElogo.gif"> -->
                 <div class="portrait-container">
                     <img class="profile-img" data-edit="img" src="{{actor.img}}">
-                    <div class="sheet-nav-container">
-                        <nav class="sheet-nav sheet-tabs tabs" data-group="primary">
-                            <a class="item" data-tab="core">Core</a>
-                            <a class="item" data-tab="equipment">Equipment</a>
-                        </nav>
-                        <select id="characterTypeSelect" name="system.characterType" data-type="String">
-                            {{#selectOptions actor.system.characterTypes selected=actor.system.characterType}}
-                            {{/selectOptions}}
-                        </select>
-                    </div>
                     <div class="profile-tags-container">
                         <div class="tags-flex-container"></div>
-                    </div>
-                    <div class="xp-container">
-                        <div class="xp-flex-container">
-                            <h2>XP</h2>
-                            <input type="number" name="system.xp" value="{{actor.system.xp}}">
-                        </div>
                     </div>
                 </div>
                 <div class="header-info-container">
@@ -138,12 +122,26 @@
             </div>
         </div>
         <section class="sheet-body">
-        	<div class="body-header">
-        		<select id="characterTypeSelect" name="system.characterType" data-type="String">
-					{{#selectOptions actor.system.characterTypes selected=actor.system.characterType}}
-					{{/selectOptions}}
-                </select>
-        	</div>
+        	<div class="sheet-body-header">
+				<div class="character-type-selector">
+					<select id="characterTypeSelect" name="system.characterType" data-type="String">
+						{{#selectOptions actor.system.characterTypes selected=actor.system.characterType}}
+						{{/selectOptions}}
+					</select>
+				</div>
+				<div class="sheet-nav-container">
+					<nav class="sheet-nav sheet-tabs tabs" data-group="primary">
+						<a class="item" data-tab="core">Core</a>
+						<a class="item" data-tab="equipment">Equipment</a>
+					</nav>
+				</div>
+				<div class="xp-container">
+					<div class="xp-flex-container">
+						<h2>XP</h2>
+						<input type="number" name="system.xp" value="{{actor.system.xp}}">
+					</div>
+				</div>
+			</div>
 
             {{!-- Core Tab --}}
             <div class="tab core" data-group="primary" data-tab="core">
