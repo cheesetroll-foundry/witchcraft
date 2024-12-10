@@ -73,59 +73,16 @@
             "character":{
                 "characterType": 0,
                 "characterTypes": [
-                    "Norm",
-                    "Survivor",
-                    "Inspired"
+                    "Gifted",
+                    "Lesser Gifted",
+                    "Mundane",
+                    "Bast"
                 ],
                 "characterTypeValues": {
-                    "Norm": {
+                    "Gifted": {
                         "attributePoints": {
-                            "value": 0,
-                            "max": 14
-                        },
-                        "qualityPoints": {
-                            "value": 0,
-                            "max": 5
-                        },
-                        "drawbackPoints": {
-                            "value": 0,
-                            "max": 10
-                        },
-                        "skillPoints": {
-                            "value": 0,
-                            "max": 30
-                        },
-                        "metaphysicsPoints": {
-                            "value": 0,
-                            "max": 0
-                        }
-                    },
-                    "Survivor": {
-                        "attributePoints": {
-                            "value": 0,
-                            "max": 20
-                        },
-                        "qualityPoints": {
                             "value": 0,
                             "max": 15
-                        },
-                        "drawbackPoints": {
-                            "value": 0,
-                            "max": 10
-                        },
-                        "skillPoints": {
-                            "value": 0,
-                            "max": 35
-                        },
-                        "metaphysicsPoints": {
-                            "value": 0,
-                            "max": 0
-                        }
-                    },
-                    "Inspired": {
-                        "attributePoints": {
-                            "value": 0,
-                            "max": 20
                         },
                         "qualityPoints": {
                             "value": 0,
@@ -141,7 +98,73 @@
                         },
                         "metaphysicsPoints": {
                             "value": 0,
+                            "max": 30
+                        }
+                    },
+                    "Lesser Gifted": {
+                        "attributePoints": {
+                            "value": 0,
+                            "max": 20
+                        },
+                        "qualityPoints": {
+                            "value": 0,
                             "max": 15
+                        },
+                        "drawbackPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "skillPoints": {
+                            "value": 0,
+                            "max": 30
+                        },
+                        "metaphysicsPoints": {
+                            "value": 0,
+                            "max": 15
+                        }
+                    },
+                    "Mundane": {
+                        "attributePoints": {
+                            "value": 0,
+                            "max": 25
+                        },
+                        "qualityPoints": {
+                            "value": 0,
+                            "max": 20
+                        },
+                        "drawbackPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "skillPoints": {
+                            "value": 0,
+                            "max": 35
+                        },
+                        "metaphysicsPoints": {
+                            "value": 0,
+                            "max": 0
+                        }
+                    },
+                    "Bast": {
+                        "attributePoints": {
+                            "value": 0,
+                            "max": 15
+                        },
+                        "qualityPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "drawbackPoints": {
+                            "value": 0,
+                            "max": 10
+                        },
+                        "skillPoints": {
+                            "value": 0,
+                            "max": 30
+                        },
+                        "metaphysicsPoints": {
+                            "value": 0,
+                            "max": 25
                         }
                     }
                 },

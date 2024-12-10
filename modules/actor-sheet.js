@@ -167,18 +167,18 @@ export class witchcraftActorSheet extends ActorSheet {
 
         // Construct and assign div elements to the headers
         if (characterTypePath != undefined && !this.actor.limited) {
-            attributesHeader.innerHTML += ` - [${actorData.characterTypeValues[characterTypePath].attributePoints.value} / ${actorData.characterTypeValues[characterTypePath].attributePoints.max}]`
+            attributesHeader.innerHTML += ` - [${actorData.characterTypeValues[characterTypePath].attributePoints.value} / ${actorData.characterTypeValues[characterTypePath].attributePoints.max + game.settings.get("witchcraft", "attribute-point-adjustment")}]`
 
-            qualityDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].qualityPoints.value} / ${actorData.characterTypeValues[characterTypePath].qualityPoints.max}]`
+            qualityDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].qualityPoints.value} / ${actorData.characterTypeValues[characterTypePath].qualityPoints.max + game.settings.get("witchcraft", "quality-point-adjustment")}]`
             this.form.querySelector('#quality-header').append(qualityDiv)
 
-            drawbackDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].drawbackPoints.value} / ${actorData.characterTypeValues[characterTypePath].drawbackPoints.max}]`
+            drawbackDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].drawbackPoints.value} / ${actorData.characterTypeValues[characterTypePath].drawbackPoints.max + game.settings.get("witchcraft", "drawback-point-adjustment")}]`
             this.form.querySelector('#drawback-header').append(drawbackDiv)
 
-            skillDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].skillPoints.value} / ${actorData.characterTypeValues[characterTypePath].skillPoints.max}]`
+            skillDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].skillPoints.value} / ${actorData.characterTypeValues[characterTypePath].skillPoints.max + game.settings.get("witchcraft", "skill-point-adjustment")}]`
             this.form.querySelector('#skill-header').append(skillDiv)
 
-            powerDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.value} / ${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.max}]`
+            powerDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.value} / ${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.max + game.settings.get("witchcraft", "metaphysics-point-adjustment")}]`
             this.form.querySelector('#power-header').append(powerDiv)
         }
     }
@@ -342,9 +342,20 @@ export class witchcraftActorSheet extends ActorSheet {
                         
 						while (Number(roll.result) == 10) {
 							roll = await new Roll('1d10').evaluate();
+							rollResults.push(roll.result);
 							if (Number(roll.result) > 6) {
 								rollResult += (Number(roll.result) - 5);
-								rollResults.push(roll.result);
+							}
+						}
+						while (Number(roll.result) == 1) {
+							roll = await new Roll('1d10').evaluate();
+							rollResults.push(roll.result);
+							if (Number(roll.result) < 5 && Number(roll.result) > 1) {
+								if (rollResult == 1) rollResult = 0;
+								rollResult += (Number(roll.result) - 5);
+							} else if (Number(roll.result) == 1) {
+								if (rollResult == 1) rollResult = 0;
+								rollResult += -5;
 							}
 						}
                         

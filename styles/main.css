@@ -207,7 +207,7 @@
 
 .witchcraft h2 {
     margin: 0;
-    font-size: 22px;
+    font-size: 18px;
 }
 
 .witchcraft .table-left-align {
@@ -430,7 +430,7 @@
     right: 0;
     background: var(--light-mode-colorbar);
     z-index: 5;
-    font-size: x-large;
+    font-size: large;
     border-radius: 3px;
 }
 
@@ -550,7 +550,7 @@
 }
 
 .witchcraft #characterTypeSelect {
-    font-size: x-large;
+    font-size: large;
     text-align: center !important;
 }
 
@@ -616,7 +616,7 @@
 }
 
 .witchcraft .encumbrance-resource div {
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .witchcraft .weapon-table,

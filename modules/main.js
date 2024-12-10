@@ -75,12 +75,58 @@ Hooks.once("init", async function () {
         type: Boolean,
         onChange: delayedReload
     });
+    game.settings.register("witchcraft", "attribute-point-adjustment", {
+        name: "Attribute Point Adjustment",
+        hint: "Adjust this value up or down to change starting Attribute Point allocation.",
+        scope: "world",
+        config: true,
+        default: 0,
+        type: Number,
+        onChange: delayedReload
+    });
+    game.settings.register("witchcraft", "quality-point-adjustment", {
+        name: "Quality Point Adjustment",
+        hint: "Adjust this value up or down to change starting Quality Point allocation.",
+        scope: "world",
+        config: true,
+        default: 0,
+        type: Number,
+        onChange: delayedReload
+    });
+    game.settings.register("witchcraft", "drawback-point-adjustment", {
+        name: "Drawback Point Adjustment",
+        hint: "Adjust this value up or down to change starting Drawback Point allocation.",
+        scope: "world",
+        config: true,
+        default: 0,
+        type: Number,
+        onChange: delayedReload
+    });
+    game.settings.register("witchcraft", "skill-point-adjustment", {
+        name: "Skill Point Adjustment",
+        hint: "Adjust this value up or down to change starting Skill Point allocation.",
+        scope: "world",
+        config: true,
+        default: 0,
+        type: Number,
+        onChange: delayedReload
+    });
+    game.settings.register("witchcraft", "metaphysics-point-adjustment", {
+        name: "Metaphysics Point Adjustment",
+        hint: "Adjust this value up or down to change starting Metaphysics Point allocation.",
+        scope: "world",
+        config: true,
+        default: 0,
+        type: Number,
+        onChange: delayedReload
+    });
 })
 
 /* -------------------------------------------- */
 /*  Chat Message Hooks                          */
 /* -------------------------------------------- */
 
+/*
 // Hook for Re-Rolls on Lucky/Unlucky Rolls
 Hooks.on("renderChatMessage", (app, html, data) => {
     let chatButton = html[0].querySelector("[data-roll='roll-again']")
@@ -157,3 +203,4 @@ Hooks.on("renderChatMessage", (app, html, data) => {
         })
     }
 })
+*/
