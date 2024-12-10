@@ -5,8 +5,7 @@
         <div class="sheet-sidebar">
             <div class="header-container">
                 <!-- <img id="sheet-logo" src="systems/witchcraft/images/AFMBElogo.gif"> -->
-                <div class="polaroid-container">
-                    <img class="polaroid" src="systems/witchcraft/images/polaroid.png">
+                <div class="portrait-container">
                     <img class="profile-img" data-edit="img" src="{{actor.img}}">
                     <div class="sheet-nav-container">
                         <nav class="sheet-nav sheet-tabs tabs" data-group="primary">
@@ -30,9 +29,9 @@
                 </div>
                 <div class="header-info-container">
                     <div class="info-container">
-                        <h1>
+                        <h2>
                             <input class="charname" type="text" name="name" value="{{actor.name}}" placeholder="Name">
-                        </h1>
+                        </h2>
                         <div class="attribute-container">
                             <h2 id="attributes-header">
                                 <div>Primary Attributes</div>
@@ -139,6 +138,12 @@
             </div>
         </div>
         <section class="sheet-body">
+        	<div class="body-header">
+        		<select id="characterTypeSelect" name="system.characterType" data-type="String">
+					{{#selectOptions actor.system.characterTypes selected=actor.system.characterType}}
+					{{/selectOptions}}
+                </select>
+        	</div>
 
             {{!-- Core Tab --}}
             <div class="tab core" data-group="primary" data-tab="core">

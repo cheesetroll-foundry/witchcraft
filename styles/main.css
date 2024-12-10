@@ -49,7 +49,7 @@
 }
 
 .witchcraft.sheet.item .window-content .editable {
-    background: none;
+    background: url('../images/parchment.jpg');
 }
 
 .witchcraft option {
@@ -394,25 +394,17 @@
     flex-direction: column;
 }
 
-.witchcraft .polaroid-container {
+.witchcraft .portrait-container {
     position: relative;
 }
 
-.witchcraft .polaroid {
-    height: 250px;
-    border: none;
-    z-index: -1;
-}
-
 .witchcraft .profile-img {
-    position: absolute;
-    top: 30px;
-    left: 32px;
+    position: relative;
+    top: 0px;
+    left: 0px;
     border: 1px solid black;
-    height: 153px;
-    width: 145px;
-    transform: rotate(-3deg);
-    z-index: 1;
+    height: 250px;
+    width: 250px;
 }
 
 .witchcraft #sheet-logo {

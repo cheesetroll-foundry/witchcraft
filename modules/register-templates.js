@@ -10,7 +10,7 @@ export function registerTemplates() {
         "systems/witchcraft/templates/components/equipment-header.hbs",
         "systems/witchcraft/templates/components/items.hbs",
         "systems/witchcraft/templates/components/item-description-sidebar.hbs",
-        "systems/witchcraft/templates/components/polaroid.hbs",
+        "systems/witchcraft/templates/components/portrait.hbs",
         "systems/witchcraft/templates/components/powers.hbs",
         "systems/witchcraft/templates/components/skills.hbs",
         "systems/witchcraft/templates/components/weapons.hbs",
