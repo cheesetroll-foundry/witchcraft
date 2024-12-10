@@ -311,9 +311,8 @@ export class witchcraftActorSheet extends ActorSheet {
 
                         // Roll Dice
                         let roll = await new Roll('1d10').evaluate()
-
-                        // Calculate total result after modifiers
-                        let totalResult = Number(roll.result) + rollMod
+						let rollResult = Number(roll.result);
+						let rollResults = [rollResult];
 
                         // Create Chat Message Content
 
@@ -338,6 +337,23 @@ export class witchcraftActorSheet extends ActorSheet {
                         
                         let successLevel = 0;
                         let successLevelText = '';
+                        let successLevelBonus = 0;
+                        let successLevelDamageBonus = 0;
+                        
+						while (Number(roll.result) == 10) {
+							roll = await new Roll('1d10').evaluate();
+							if (Number(roll.result) > 6) {
+								rollResult += (Number(roll.result) - 5);
+								rollResults.push(roll.result);
+							}
+						}
+                        
+                        // Calculate total result after modifiers
+                        let totalResult = rollResult + rollMod;
+                        if (totalResult < 9) {
+                        	successLevel = 0;
+                        	successLevelText = '<b>Failure.</b>';
+                        }
                         if (totalResult == 9 || totalResult == 10) {
                         	successLevel = 1;
                         	successLevelText = '<b>First Level (Adequate):</b> The Task or Test got done. If an artistic endeavor, it is just adequate, and critics/audiences are likely to give it "ho-hum" responses. A complex and involved Task takes the maximum required time to complete. An attempted maneuver was barely accomplished, and might appear to be the result of luck rather than skill. Social skills produce minimal benefits for the character.<br/><b>Combat:</b> Attack does normal damage.';
@@ -366,19 +382,8 @@ export class witchcraftActorSheet extends ActorSheet {
                         	successLevel = Math.floor((totalResult-21)/3) + 6;
                         	successLevelBonus = successLevel-1;
                         	successLevelDamageBonus = successLevel-3;
-                        	successLevelText = '<b>Level ${successLevel} (Mind-boggling):</b> The Task or Test produced amazing results, accomplishing far more than was intended. Artists gain fame after one such roll, but all their future accomplishments will be measured against this one, which may lead to the "one-shot wonder" label. Social skills produce a lasting impression on the people involved, resulting in a bonus of +${successLevelBonus} on all future attempts in that skill involving the same people.<br/><b>Combat:</b> Increase the damage rolled by ${successLevelDamageBonus} before applying the Multiplier.';
+                        	successLevelText = '<b>Level ' + successLevel + '(Mind-boggling):</b> The Task or Test produced amazing results, accomplishing far more than was intended. Artists gain fame after one such roll, but all their future accomplishments will be measured against this one, which may lead to the "one-shot wonder" label. Social skills produce a lasting impression on the people involved, resulting in a bonus of +' + successLevelBonus + ' on all future attempts in that skill involving the same people.<br/><b>Combat:</b> Increase the damage rolled by ' + successLevelDamageBonus + ' before applying the Multiplier.';
                         }
-                        if (roll.result == 10) {
-                            ruleOfDiv = `<h2 class="rule-of-chat-text">Rule of 10!</h2>
-                                        <button type="button" data-roll="roll-again" class="rule-of-ten">Roll Again</button>`
-                            totalResult = 10
-                        }
-                        if (roll.result == 1) {
-                            ruleOfDiv = `<h2 class="rule-of-chat-text">Rule of 1!</h2>
-                                        <button type="button" data-roll="roll-again" class="rule-of-one">Roll Again</button>`
-                            totalResult = 1
-                        }
-                        
 
                         let chatContent = `<form>
                                                 <b>${attributeLabel} [${actorData.primaryAttributes[attributeLabel.toLowerCase()].value}] - ${attributeTestSelect}</b>
@@ -387,32 +392,27 @@ export class witchcraftActorSheet extends ActorSheet {
                                                 <table class="witchcraft-chat-roll-table">
                                                     <thead>
                                                         <tr>
-                                                            <th class="table-center-align">Roll</th>
+                                                            <th class="table-center-align">Roll(s)</th>
                                                             <th class="table-center-align">Modifier</th>
                                                             <th class="table-center-align">Result</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td class="table-center-align" data-roll="dice-result">[[${roll.result}]]</td>
+                                                            <td class="table-center-align" data-roll="dice-result">${rollResults}</td>
                                                             <td class="table-center-align" data-roll="modifier">${rollMod}</td>
                                                             <td class="table-center-align" data-roll="dice-total" data-roll-value="${totalResult}">${totalResult}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
                                                 ${successLevelText}
-
-                                                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
-                                                    ${ruleOfDiv}
-                                                </div>
                                             </form>`
 
                         ChatMessage.create({
                             type: CONST.CHAT_MESSAGE_STYLES.ROLL,
                             user: game.user.id,
                             speaker: ChatMessage.getSpeaker(),
-                            content: chatContent,
-                            roll: roll
+                            content: chatContent
                         })
 
                     }
