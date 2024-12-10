@@ -270,7 +270,7 @@ export class witchcraftCreatureSheet extends ActorSheet {
                                                         <tr>
                                                             <td class="table-center-align" data-roll="dice-result">[[${roll.result}]]</td>
                                                             <td class="table-center-align" data-roll="modifier">${rollMod}</td>
-                                                            <td class="table-center-align" data-roll="dice-total" data-roll-value="${totalResult}">${totalResult + rollMod}</td>
+                                                            <td class="table-center-align" data-roll="dice-total" data-roll-value="${totalResult}">${totalResult}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>

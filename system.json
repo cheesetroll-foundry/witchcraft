@@ -3,10 +3,10 @@
     "title": "WitchCraft",
     "description": "A digital system for playing WitchCraft by Eden Studios",
     "version": "0.1",
-    "minimumCoreVersion": "12",
-    "compatibleCoreVersion": "12.331",
-    "templateVersion": 1,
-    "author": "cheestroll",
+    "compatibility": {
+    	"minimum": "12",
+    	"verified": "12.331"
+    },
     "esmodules": [
         "modules/main.js"
     ],
@@ -14,8 +14,10 @@
         "styles/main.css"
     ],
     "languages": [],
-    "gridDistance": 5,
-    "gridUnits": "ft",
+    "grid": {
+    	"distance": 5,
+    	"units": "ft"
+    },
     "primaryTokenAttribute": "hp",
     "secondaryTokenAttribute": "endurance_points",
     "packs": [],

@@ -90,7 +90,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
             let ruleTag = '';
             const diceResult = Number(html[0].querySelector("[data-roll='dice-result']").textContent);
 
-            if (diceResult == 10) { ruleTag = '<b>Rule of Ten Re-Roll</b>' }
+            if (diceResult == 10) { ruleTag = '<b>Rule of Ten Re-Roll</b>: on a 10, roll again, subtract 5, and add the result to 10. If another 10 is rolled, add 5 to the running total and roll again.' }
             if (diceResult == 1) { ruleTag = '<b>Rule of One Re-Roll</b>: If the first reroll is a negative value (1d10-5), it replaces the original die roll. </br><b>Exception</b>: Rolling a 1 again replaces the original roll with -5; each subsequent 1 rolled subtracts 5 from the result.' }
 
             let roll = await new Roll('1d10').evaluate()
@@ -113,7 +113,7 @@ Hooks.on("renderChatMessage", (app, html, data) => {
                             <button type="button" data-roll="roll-again" class="rule-of-ten">Roll Again</button>`
                 ruleOfMod = 5
             }
-            if (roll.result == 1 && ruleTag != 'Rule of Ten Re-Roll') {
+            if (roll.result == 1 && !ruleTag.includes('Rule of Ten Re-Roll')) {
                 ruleOfDiv = `<h2 class="rule-of-chat-text">Rule of 1!</h2>
                             <button type="button" data-roll="roll-again" class="rule-of-one">Roll Again</button>`
                 ruleOfMod = -5
