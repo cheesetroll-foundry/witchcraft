@@ -7,6 +7,11 @@
     	"minimum": "12",
     	"verified": "12.331"
     },
+    "authors": [{
+		"name": "cheesetroll",
+		"email": "cheesetroll@gmail.com",
+		"discord": "cheesetroll"
+	}],
     "esmodules": [
         "modules/main.js"
     ],

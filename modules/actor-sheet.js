@@ -335,7 +335,39 @@ export class witchcraftActorSheet extends ActorSheet {
                             const drawbackPenalty = selectedDrawback.system.bonus;
                             tags.push(`<span class="penaltyColorClass">${selectedDrawback.name} ${drawbackPenalty >= 0 ? '-' : ''}${drawbackPenalty}</span>`) 
                         }
-
+                        
+                        let successLevel = 0;
+                        let successLevelText = '';
+                        if (totalResult == 9 || totalResult == 10) {
+                        	successLevel = 1;
+                        	successLevelText = '<b>First Level (Adequate):</b> The Task or Test got done. If an artistic endeavor, it is just adequate, and critics/audiences are likely to give it "ho-hum" responses. A complex and involved Task takes the maximum required time to complete. An attempted maneuver was barely accomplished, and might appear to be the result of luck rather than skill. Social skills produce minimal benefits for the character.<br/><b>Combat:</b> Attack does normal damage.';
+                        }
+                        if (totalResult == 11 || totalResult == 12) {
+                        	successLevel = 2;
+                        	successLevelText = '<b>Second Level (Decent):</b> The Task or Test was accomplished with relative ease and even some flair. Artistic results are above average, resulting in a warm reaction from many, but not most. Complex and involved Tasks take 10% less than the maximum required time. Attempted maneuvers are skillfully accomplished. Social skills manage to gain some benefits for the character (including a +1 to further attempts on the same people under similar situations).<br/><b>Combat:</b> Attack does normal damage.';
+                        }
+                        if (totalResult == 13 || totalResult == 14) {
+                        	successLevel = 3;
+                        	successLevelText = '<b>Third Level (Good):</b> The Task or Test was completed with ease. Artistic results are largely appreciated by connoisseurs and well-liked by the public (although some critics will be able to find something wrong). Complex and involved Tasks take 25% less time than normally required. Attempted maneuvers are done with seeming effortlessness, apparently the result of great skill. Social skills are not only successful, the character will be at +2 on future attempts on the same people (this is not cumulative with subsequent high rolls -- use the highest bonus only).<br/><b>Combat:</b> This is the roll needed to target a specific body part, or to hit a vital area.';
+                        }
+                        if (totalResult == 15 || totalResult == 16) {
+                        	successLevel = 4;
+                        	successLevelText = '<b>Fourth Level (Very Good):</b> The Task or Test was very successful. Artistic endeavors are rewarded with a great deal of appreciation from the intended audience. Complex and involved Tasks can be finished in half the time. Social skills produce a lasting impression on the people involved, resulting in a bonus of +3 on all future attempts in that skill involving the same people.<br/><b>Combat:</b> Increase the damage rolled by 1 before applying the Multiplier.';
+                        }
+                        if (totalResult == 17 || totalResult == 18 || totalResult == 19 || totalResult == 20) {
+                        	successLevel = 5;
+                        	successLevelText = '<b>Fifth Level (Excellent):</b> The Task or Test produced excellent results. Any artistic endeavor impresses the audience greatly, leading to a great deal of recognition and fame. Social skills produce a lasting impression on the people involved, resulting in a bonus of +4 on all future attempts in that skill involving the same people.<br/><b>Combat:</b> Increase the damage rolled by 2 before applying the Multiplier.';
+                        }
+                        if (totalResult == 21 || totalResult == 22 || totalResult == 23) {
+                        	successLevel = 6;
+                        	successLevelText = '<b>Sixth Level (Extraordinary):</b> The Task or Test produced amazing results, accomplishing far more than was intended. Artists gain fame after one such roll, but all their future accomplishments will be measured against this one, which may lead to the "one-shot wonder" label. Social skills produce a lasting impression on the people involved, resulting in a bonus of +5 on all future attempts in that skill involving the same people.<br/><b>Combat:</b> Increase the damage rolled by 3 before applying the Multiplier.';
+                        }
+                        if (totalResult > 23) {
+                        	successLevel = Math.floor((totalResult-21)/3) + 6;
+                        	successLevelBonus = successLevel-1;
+                        	successLevelDamageBonus = successLevel-3;
+                        	successLevelText = '<b>Level ${successLevel} (Mind-boggling):</b> The Task or Test produced amazing results, accomplishing far more than was intended. Artists gain fame after one such roll, but all their future accomplishments will be measured against this one, which may lead to the "one-shot wonder" label. Social skills produce a lasting impression on the people involved, resulting in a bonus of +${successLevelBonus} on all future attempts in that skill involving the same people.<br/><b>Combat:</b> Increase the damage rolled by ${successLevelDamageBonus} before applying the Multiplier.';
+                        }
                         if (roll.result == 10) {
                             ruleOfDiv = `<h2 class="rule-of-chat-text">Rule of 10!</h2>
                                         <button type="button" data-roll="roll-again" class="rule-of-ten">Roll Again</button>`
@@ -346,9 +378,10 @@ export class witchcraftActorSheet extends ActorSheet {
                                         <button type="button" data-roll="roll-again" class="rule-of-one">Roll Again</button>`
                             totalResult = 1
                         }
+                        
 
                         let chatContent = `<form>
-                                                <h2>${attributeLabel} Roll [ ${actorData.primaryAttributes[attributeLabel.toLowerCase()].value} ] - ${attributeTestSelect} Test</h2>
+                                                <b>${attributeLabel} [${actorData.primaryAttributes[attributeLabel.toLowerCase()].value}] - ${attributeTestSelect}</b>
 
                                                 <div class="witchcraft-tags-flex-container" > <b>Modifiers</b>: ${ tags.join(' | ') } ${ penaltyTags.length > 0 ? " | " + penaltyTags.join(' | ') : "" }</div>
                                                 <table class="witchcraft-chat-roll-table">
@@ -367,6 +400,7 @@ export class witchcraftActorSheet extends ActorSheet {
                                                         </tr>
                                                     </tbody>
                                                 </table>
+                                                ${successLevelText}
 
                                                 <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;">
                                                     ${ruleOfDiv}
