@@ -1,3 +1,7 @@
+### 1.0.1
+
+Allow rolling with Power levels.
+
 ### 1.0
 
 Initial release.
