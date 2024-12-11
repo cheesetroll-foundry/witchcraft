@@ -189,7 +189,7 @@ export class witchcraftActorSheet extends ActorSheet {
         let attributeLabel = element.dataset.attributeName
         let actorData = this.actor.system
 
-        // Create options for Qualities/Drawbacks/Skills
+        // Create options for Qualities/Drawbacks/Skills/Powers
         let skillOptions = []
         for (let skill of this.actor.items.filter(item => item.type === 'skill')) {
             let option = `<option value="${skill.id}">${skill.name} ${skill.system.level}</option>`
@@ -208,6 +208,12 @@ export class witchcraftActorSheet extends ActorSheet {
             drawbackOptions.push(option)
         }
 
+        let powerOptions = []
+        for (let power of this.actor.items.filter(item => item.type === 'power')) {
+            let option = `<option value="${power.id}">${power.name} ${power.system.level}</option>`
+            powerOptions.push(option)
+        }
+        
         // Create penalty tags from Resource Loss Status
         let penaltyTags = []
         if (actorData.secondaryAttributes.endurance_points.loss_toggle) { penaltyTags.push(`<span class="penaltyColorClass">Endurance Loss ${actorData.secondaryAttributes.endurance_points.loss_penalty}</span>`) }
@@ -281,6 +287,15 @@ export class witchcraftActorSheet extends ActorSheet {
                                             </select>
                                         </td>
                                     </tr>
+                                    <tr>
+                                        <td class="table-bold-text">Powers</td>
+                                        <td>
+                                            <select id="powerSelect" name="powers">
+                                                <option value="None">None</option>
+                                                ${powerOptions.join('')}
+                                            </select>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                     </div>`,
@@ -298,16 +313,18 @@ export class witchcraftActorSheet extends ActorSheet {
                         let selectedSkill = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#skillSelect').value)
                         let selectedQuality = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#qualitySelect').value)
                         let selectedDrawback = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#drawbackSelect').value)
+                        let selectedPower = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#powerSelect').value)
 
                         // Set values for options
                         let attributeValue = attributeTestSelect === 'Simple' ? actorData.primaryAttributes[attributeLabel.toLowerCase()].value * 2 : actorData.primaryAttributes[attributeLabel.toLowerCase()].value
                         let skillValue = selectedSkill != undefined ? selectedSkill.system.level : 0
                         let qualityValue = selectedQuality != undefined ? selectedQuality.system.bonus : 0
                         let drawbackValue = selectedDrawback != undefined ? selectedDrawback.system.bonus : 0
+                        let powerValue = selectedPower != undefined ? selectedPower.system.level : 0
                         let statusPenalties = actorData.secondaryAttributes.endurance_points.loss_penalty + actorData.secondaryAttributes.essence.loss_penalty
 
                         // Calculate total modifier to roll
-                        let rollMod = (attributeValue + skillValue + qualityValue + userInputModifier) - Math.abs(drawbackValue) + statusPenalties
+                        let rollMod = (attributeValue + skillValue + qualityValue + powerValue + userInputModifier) - Math.abs(drawbackValue) + statusPenalties
 
                         // Roll Dice
                         let roll = await new Roll('1d10').evaluate()
@@ -333,6 +350,10 @@ export class witchcraftActorSheet extends ActorSheet {
                         if (selectedDrawback != undefined) { 
                             const drawbackPenalty = selectedDrawback.system.bonus;
                             tags.push(`<span class="penaltyColorClass">${selectedDrawback.name} ${drawbackPenalty >= 0 ? '-' : ''}${drawbackPenalty}</span>`) 
+                        }
+                        if (selectedPower != undefined) { 
+                            const powerBonus = selectedPower.system.level;
+                            tags.push(`<span class="${powerBonus >= 0 ? 'bonusColorClass' : 'penaltyColorClass'}">${selectedPower.name} ${powerBonus >= 0 ? '+' : ''}${powerBonus}</span>`) 
                         }
                         
                         let successLevel = 0;
