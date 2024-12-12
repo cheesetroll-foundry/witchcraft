@@ -37,6 +37,9 @@ export class witchcraftActor extends Actor {
       data.characterTypeValues[chaTypeLabel].skillPoints.value = this._calculateSkillPoints(data)
       data.characterTypeValues[chaTypeLabel].metaphysicsPoints.value = this._calculateMetaphysicsPoints(data)
     }
+    //Set Max Skill and Max Metaphysics values (can be adjusted by some Qualities)
+    data.maxSkills = this._calculateMaxSkills(data);
+    data.maxMetaphysics = this._calculateMaxMetaphysics(data);
 
     // Set Encumbrance Values
     data.encumbrance.lifting_capacity = this._calculateLiftingCapacity(data)
@@ -161,7 +164,29 @@ export class witchcraftActor extends Actor {
 
     return data.primaryAttributes.dexterity.value + itemBonus
   }
+  
+  _calculateMaxSkills(data) {
+    // Calculate bonuses from all items
+    let itemsWithBonus = this.items.filter(item => item.system.hasOwnProperty('resource_bonus'))
+    let itemBonus = 0
+    for (let item of itemsWithBonus) {
+      itemBonus = itemBonus + item.system.resource_bonus.skills
+    }
 
+    return itemBonus
+  }
+
+  _calculateMaxMetaphysics(data) {
+    // Calculate bonuses from all items
+    let itemsWithBonus = this.items.filter(item => item.system.hasOwnProperty('resource_bonus'))
+    let itemBonus = 0
+    for (let item of itemsWithBonus) {
+      itemBonus = itemBonus + item.system.resource_bonus.metaphysics
+    }
+
+    return itemBonus
+  }
+  
   _calculateQualityPoints(data) {
     let total = 0
     for (let quality of this.items.filter(item => item.type === 'quality')) {

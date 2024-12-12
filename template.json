@@ -289,7 +289,9 @@
                     "endurance_points": 0,
                     "speed": 0,
                     "essence": 0,
-                    "initiative": 0
+                    "initiative": 0,
+                    "skills": 0,
+                    "metaphysics": 0
                 }
             }
         },

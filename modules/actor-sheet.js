@@ -175,10 +175,10 @@ export class witchcraftActorSheet extends ActorSheet {
             drawbackDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].drawbackPoints.value} / ${actorData.characterTypeValues[characterTypePath].drawbackPoints.max + game.settings.get("witchcraft", "drawback-point-adjustment")}]`
             this.form.querySelector('#drawback-header').append(drawbackDiv)
 
-            skillDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].skillPoints.value} / ${actorData.characterTypeValues[characterTypePath].skillPoints.max + game.settings.get("witchcraft", "skill-point-adjustment")}]`
+            skillDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].skillPoints.value} / ${actorData.characterTypeValues[characterTypePath].skillPoints.max + game.settings.get("witchcraft", "skill-point-adjustment") + actorData.maxSkills}]`
             this.form.querySelector('#skill-header').append(skillDiv)
 
-            powerDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.value} / ${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.max + game.settings.get("witchcraft", "metaphysics-point-adjustment")}]`
+            powerDiv.innerHTML = `- [${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.value} / ${actorData.characterTypeValues[characterTypePath].metaphysicsPoints.max + game.settings.get("witchcraft", "metaphysics-point-adjustment") + actorData.maxMetaphysics}]`
             this.form.querySelector('#power-header').append(powerDiv)
         }
     }
