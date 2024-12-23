@@ -1,3 +1,7 @@
+### 1.0.2
+
+Handle non-square character portraits without squashing them.
+
 ### 1.0.1
 
 Allow rolling with Power levels.

@@ -396,6 +396,8 @@
 
 .witchcraft .portrait-container {
     position: relative;
+    display: flex;
+    justify-content: center;
 }
 
 .witchcraft .profile-img {
@@ -403,8 +405,8 @@
     top: 0px;
     left: 0px;
     border: 1px solid black;
-    height: 250px;
-    width: 250px;
+    max-height: 250px;
+    max-width: 250px;
 }
 
 .witchcraft #sheet-logo {
