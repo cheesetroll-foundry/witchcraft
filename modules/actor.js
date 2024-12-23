@@ -214,7 +214,7 @@ export class witchcraftActor extends Actor {
   _calculateMetaphysicsPoints(data) {
     let total = 0
     for (let power of this.items.filter(item => item.type === 'power')) {
-      total = total + power.system.level
+      total = total + power.system.cost
     }
     return total
   }

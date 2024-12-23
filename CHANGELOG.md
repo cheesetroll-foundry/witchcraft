@@ -2,6 +2,8 @@
 
 Handle non-square character portraits without squashing them.
 
+Add Cost for Powers, so cost and modifier can be tracked separately.
+
 ### 1.0.1
 
 Allow rolling with Power levels.
