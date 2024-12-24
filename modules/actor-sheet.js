@@ -197,13 +197,13 @@ export class witchcraftActorSheet extends ActorSheet {
         }
 
         let qualityOptions = []
-        for (let quality of this.actor.items.filter(item => item.type === 'quality')) {
+        for (let quality of this.actor.items.filter(item => item.type === 'quality' && item.system.bonus != null && item.system.bonus != 0)) {
             let option = `<option value="${quality.id}">${quality.name} ${quality.system.bonus}</option>`
             qualityOptions.push(option)
         }
 
         let drawbackOptions = []
-        for (let drawback of this.actor.items.filter(item => item.type === 'drawback')) {
+        for (let drawback of this.actor.items.filter(item => item.type === 'drawback' && item.system.bonus != null && item.system.bonus != 0)) {
             let option = `<option value="${drawback.id}">${drawback.name} ${drawback.system.bonus}</option>`
             drawbackOptions.push(option)
         }
