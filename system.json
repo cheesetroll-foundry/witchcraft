@@ -2,7 +2,7 @@
     "id": "witchcraft",
     "title": "WitchCraft",
     "description": "A digital system for playing WitchCraft by Eden Studios",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "compatibility": {
     	"minimum": "12",
     	"verified": "12.331"
@@ -31,6 +31,6 @@
     "bugs": "https://github.com/cheesetroll-foundry/witchcraft/issues",
     "changelog": "https://github.com/cheesetroll-foundry/witchcraft/blob/main/CHANGELOG.md",
     "manifest": "https://github.com/cheesetroll-foundry/witchcraft/blob/main/system.json",
-    "download": "https://github.com/cheesetroll-foundry/witchcraft/archive/refs/tags/1.0.2.zip",
+    "download": "https://github.com/cheesetroll-foundry/witchcraft/archive/refs/tags/1.0.3.zip",
     "license": "LICENSE.txt"
 }

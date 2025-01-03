@@ -208,6 +208,10 @@ export class witchcraftActor extends Actor {
     for (let skill of this.items.filter(item => item.type === 'skill')) {
       total = total + skill.system.level
     }
+    //include Specialties in skill points
+    for (let specialty of this.items.filter(item => item.type === 'specialty')) {
+      total = total + 1
+    }
     return total
   }
 

@@ -219,6 +219,7 @@
             "quality",
             "drawback",
             "skill",
+            "specialty",
             "power",
             "weapon",
             "item",
@@ -310,6 +311,10 @@
                 "common"
             ],
             "level": 0
+        },
+        "specialty": {
+        	"templates": [
+        	]
         },
         "power": {
             "templates": [

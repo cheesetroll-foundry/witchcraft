@@ -2,6 +2,7 @@
     <h2 id="skill-header" class="header-with-button">
         <button type="button" class="create-item" data-create="skill">+</button>
         <span>Skills</span>
+        <button type="button" class="create-item" data-create="specialty">Sp</button>
     </h2>
     <table class="item-table">
         <thead>
@@ -16,6 +17,14 @@
             <tr class="item" data-item-id="{{item._id}}">
                 <td class="item-name">{{item.name}}</td>
                 <td class="table-center-align">{{item.system.level}}</td>
+                <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
+                            class="fas fa-trash"></i></a></td>
+            </tr>
+            {{/each}}
+            {{#each actor.specialty as |item id|}}
+            <tr class="item" data-item-id="{{item._id}}">
+                <td class="item-name">{{item.name}}</td>
+                <td class="table-center-align"></td>
                 <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
                             class="fas fa-trash"></i></a></td>
             </tr>
