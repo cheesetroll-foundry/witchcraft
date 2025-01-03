@@ -4,6 +4,8 @@ Add Specialties to Skills section and dice rolling.  Use the Sp button to add a 
 
 Add Notes section to character sheets.
 
+Fix dark background on selectors.
+
 ### 1.0.2
 
 Handle non-square character portraits without squashing them.
