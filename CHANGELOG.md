@@ -2,6 +2,8 @@
 
 Add Specialties to Skills section and dice rolling.  Use the Sp button to add a Specialty, and then select it from the drop-down when rolling to get a +2 on that roll.
 
+Add Notes section to character sheets.
+
 ### 1.0.2
 
 Handle non-square character portraits without squashing them.

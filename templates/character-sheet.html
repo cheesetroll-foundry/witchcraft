@@ -150,7 +150,12 @@
                     {{editor actor.system.biography target="system.biography" button=true owner=owner
                     editable=editable}}
                 </div>
-                <div class="skill-item-container">
+                <div class="notes-container">
+                    <h2>Notes</h2>
+                    {{editor actor.system.notes target="system.notes" button=true owner=owner
+                    editable=editable}}
+                </div>
+				<div class="skill-item-container">
                     <div class="qualities-container">
                         <h2 id="quality-header" class="header-with-button">
                             <button type="button" class="create-item" data-create="quality">+</button>

@@ -1,9 +1,3 @@
-<div class="contacts-container">
-    <h2>Contacts</h2>
-    {{editor actor.system.bio.contacts target="system.bio.contacts" button=true owner=owner
-    editable=editable}}
-</div>
-
 <div class="character-details-container">
     <h2>Details</h2>
     <div class="character-details">
@@ -31,6 +25,10 @@
             <label class="detail-label">Weight</label>
             <input type="text" name="system.bio.weight" value="{{actor.system.bio.weight}}">
         </div>
-    </div>
-    
+    </div>    
+</div>
+<div class="contacts-container">
+    <h2>Contacts</h2>
+    {{editor actor.system.bio.contacts target="system.bio.contacts" button=true owner=owner
+    editable=editable}}
 </div>

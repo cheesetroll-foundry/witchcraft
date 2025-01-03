@@ -304,13 +304,15 @@
 .editor h2
 
 .witchcraft .bio-container .editor,
+.witchcraft .notes-container .editor,
 .witchcraft .contacts-container .editor {
-    height: 200px;
+    height: 100px;
     width: 100%;
     margin-bottom: 5px;
 }
 
 .witchcraft .bio-container h2,
+.witchcraft .notes-container h2,
 .witchcraft .contacts-container h2,
 .witchcraft .character-details-container h2,
 .witchcraft .core-item-container h2,
@@ -563,6 +565,7 @@
 }
 
 .witchcraft .bio-container,
+.witchcraft .notes-container,
 .witchcraft .contacts-container {
     display: flex;
     flex-direction: column;
@@ -738,7 +741,8 @@
     filter: blur(5px);
 }
 
-.witchcraft .bio-container[limited="true"] .editor {
+.witchcraft .bio-container[limited="true"] .editor,
+.witchcraft .notes-container[limited="true"] .editor {
     height: auto;
 }
 
@@ -809,6 +813,7 @@
 }
 
 .witchcraft.dark-mode .bio-container h2,
+.witchcraft.dark-mode .notes-container h2,
 .witchcraft.dark-mode .contacts-container h2,
 .witchcraft.dark-mode .character-details-container h2,
 .witchcraft.dark-mode .core-item-container h2,

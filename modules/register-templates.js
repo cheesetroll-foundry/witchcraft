@@ -6,6 +6,7 @@ export function registerTemplates() {
         "systems/witchcraft/templates/components/secondary-attributes.hbs",
         "systems/witchcraft/templates/components/aspects.hbs",
         "systems/witchcraft/templates/components/biography.hbs",
+		"systems/witchcraft/templates/components/notes.hbs",
         "systems/witchcraft/templates/components/drawbacks.hbs",
         "systems/witchcraft/templates/components/equipment-header.hbs",
         "systems/witchcraft/templates/components/items.hbs",
