@@ -6,6 +6,8 @@ Add Notes section to character sheets.
 
 Fix dark background on selectors.
 
+Add Strength to powers to allow Sight powers.
+
 ### 1.0.2
 
 Handle non-square character portraits without squashing them.
