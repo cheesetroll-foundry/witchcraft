@@ -151,7 +151,7 @@ export class witchcraftActor extends Actor {
       itemBonus = itemBonus + item.system.resource_bonus.essence
     }
     //Seer powers (with Strength) grant essence equal to Art + Strength
-    let itemsWithStrength = this.items.filter(item => item.system.hasOwnProperty('strength'))
+    let itemsWithStrength = this.items.filter(item => item.system.hasOwnProperty('strength') && item.system.strength > 0)
     for (let item of itemsWithStrength) {
       itemBonus = itemBonus + item.system.strength + item.system.level
     }
