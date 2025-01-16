@@ -20,8 +20,8 @@
     ],
     "languages": [],
     "grid": {
-    	"distance": 5,
-    	"units": "ft"
+    	"distance": 2,
+    	"units": "yards"
     },
     "primaryTokenAttribute": "hp",
     "secondaryTokenAttribute": "endurance_points",
