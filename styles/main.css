@@ -305,7 +305,6 @@
 .witchcraft .bio-container .editor,
 .witchcraft .notes-container .editor,
 .witchcraft .contacts-container .editor {
-    height: 100px;
     width: 100%;
     margin-bottom: 5px;
 }
