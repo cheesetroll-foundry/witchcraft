@@ -196,32 +196,45 @@ export class witchcraftActorSheet extends ActorSheet {
         let actorData = this.actor.system
 
         // Create options for Qualities/Drawbacks/Skills/Specialties/Powers
+        
+        function sortOptions(optionType) {
+			if (optionType.length > 1) {
+				optionType.sort((a, b) => {
+					let nameA = a.name.toLowerCase()
+					let nameB = b.name.toLowerCase()
+					if (nameA > nameB) { return 1 }
+					else { return -1 }
+				})
+			}
+			return optionType
+        }
+        
         let skillOptions = []
-        for (let skill of this.actor.items.filter(item => item.type === 'skill')) {
+        for (let skill of sortOptions(this.actor.items.filter(item => item.type === 'skill'))) {
             let option = `<option value="${skill.id}">${skill.name} ${skill.system.level}</option>`
             skillOptions.push(option)
         }
         
         let specialtyOptions = []
-        for (let specialty of this.actor.items.filter(item => item.type === 'specialty')) {
+        for (let specialty of sortOptions(this.actor.items.filter(item => item.type === 'specialty'))) {
             let option = `<option value="${specialty.id}">${specialty.name}</option>`
             specialtyOptions.push(option)
         }
 
         let qualityOptions = []
-        for (let quality of this.actor.items.filter(item => item.type === 'quality' && item.system.bonus != null && item.system.bonus != 0)) {
+        for (let quality of sortOptions(this.actor.items.filter(item => item.type === 'quality' && item.system.bonus != null && item.system.bonus != 0))) {
             let option = `<option value="${quality.id}">${quality.name} ${quality.system.bonus}</option>`
             qualityOptions.push(option)
         }
 
         let drawbackOptions = []
-        for (let drawback of this.actor.items.filter(item => item.type === 'drawback' && item.system.bonus != null && item.system.bonus != 0)) {
+        for (let drawback of sortOptions(this.actor.items.filter(item => item.type === 'drawback' && item.system.bonus != null && item.system.bonus != 0))) {
             let option = `<option value="${drawback.id}">${drawback.name} ${drawback.system.bonus}</option>`
             drawbackOptions.push(option)
         }
 
         let powerOptions = []
-        for (let power of this.actor.items.filter(item => item.type === 'power')) {
+        for (let power of sortOptions(this.actor.items.filter(item => item.type === 'power'))) {
             let option = `<option value="${power.id}">${power.name} ${power.system.level}</option>`
             powerOptions.push(option)
         }
