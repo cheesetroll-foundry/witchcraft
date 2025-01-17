@@ -52,7 +52,8 @@ export class witchcraftActor extends Actor {
     data.secondaryAttributes.endurance_points.max = this._calcEndurancePoints(data)
     this._calcSpeed(data)
     data.secondaryAttributes.essence.max = this._calcEssencePool(data)
-    data.secondaryAttributes.initiative.value = this._calcInitiative(data)
+    data.secondaryAttributes.initiativeOptions = ["Strength", "Dexterity", "Constitution", "Intelligence", "Perception", "Willpower"]
+    data.secondaryAttributes.initiative = this._calcInitiative(data)
 
     // Determine Secondary Attribute Loss Penalties
     if (data.secondaryAttributes.endurance_points.value <= 5) {
@@ -89,7 +90,7 @@ export class witchcraftActor extends Actor {
     data.secondaryAttributes.endurance_points.max = this._calcEndurancePoints(data)
     this._calcSpeed(data)
     data.secondaryAttributes.essence.max = this._calcEssencePool(data)
-    data.secondaryAttributes.initiative.value = this._calcInitiative(data)
+    data.secondaryAttributes.initiative = this._calcInitiative(data)
 
     // Calculate Power Total
     data.power = this._calculatePowerTotal(data)
@@ -166,8 +167,12 @@ export class witchcraftActor extends Actor {
     for (let item of itemsWithBonus) {
       itemBonus = itemBonus + item.system.resource_bonus.initiative
     }
+	
+	//get selected initiative value
+	let attributeLabel = data.secondaryAttributes.initiativeOptions[data.secondaryAttributes.initiativeOption]
+	
+	return data.primaryAttributes[attributeLabel.toLowerCase()].value + itemBonus
 
-    return data.primaryAttributes.dexterity.value + itemBonus
   }
   
   _calculateMaxSkills(data) {

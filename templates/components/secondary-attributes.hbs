@@ -37,10 +37,13 @@
             </div>
         </div>
         <div class="resource">
-            <button type="button" class="no-focus">Initiative</button>
-            <div class="resource-values secondaryAttribute">
-                <div>{{actor.system.secondaryAttributes.initiative.value}}</div>
-            </div>
+            <button type="button" class="initiative-roll">Initiative</button>
+            <div class="initiative-selector">
+				<select id="initiativeSelect" name="system.secondaryAttributes.initiativeOption" data-type="String">
+						{{#selectOptions actor.system.secondaryAttributes.initiativeOptions selected=actor.system.secondaryAttributes.initiativeOption}}
+						{{/selectOptions}}
+					</select>
+				</div>
         </div>
     </div>
 </div>

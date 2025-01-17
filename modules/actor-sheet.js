@@ -123,6 +123,7 @@ export class witchcraftActorSheet extends ActorSheet {
         html.find('.toggleEquipped').click(this._onToggleEquipped.bind(this))
         html.find('.armor-button-cell button').click(this._onArmorRoll.bind(this))
         html.find('.reset-resource').click(this._onResetResource.bind(this))
+        html.find('.initiative-roll').click(this._onInitiativeRoll.bind(this))
 
         // Update/Open Inventory Item
         html.find('.create-item').click(this._createItem.bind(this))
@@ -648,6 +649,55 @@ export class witchcraftActorSheet extends ActorSheet {
             roll: roll
         })
     }
+	
+	async _onInitiativeRoll(event) {
+		event.preventDefault()
+
+		let element = event.currentTarget
+		let actorData = this.actor.system
+		
+		let attributeLabel = actorData.secondaryAttributes.initiativeOptions[actorData.secondaryAttributes.initiativeOption]
+		
+		//Roll dice
+		let roll = await new Roll('1d10').evaluate()
+        let rollResult = Number(roll.result);
+        let rollMod = actorData.primaryAttributes[attributeLabel.toLowerCase()].value
+        let totalResult = rollResult + rollMod
+
+
+        // Create Chat Content
+        let chatContent = `<form>
+								<b>Initiative Roll: ${attributeLabel} + ${rollMod}</b>
+								<div class="witchcraft-tags-flex-container" ></div>
+								<table class="witchcraft-chat-roll-table">
+									<thead>
+										<tr>
+											<th class="table-center-align">Roll</th>
+											<th class="table-center-align">Modifier</th>
+											<th class="table-center-align">Result</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="table-center-align" data-roll="dice-result">${rollResult}</td>
+											<td class="table-center-align" data-roll="modifier">${rollMod}</td>
+											<td class="table-center-align" data-roll="dice-total" data-roll-value="${totalResult}">${totalResult}</td>
+										</tr>
+									</tbody>
+								</table>
+							</form>`
+
+        ChatMessage.create({
+            type: CONST.CHAT_MESSAGE_STYLES.ROLL,
+            user: game.user.id,
+            speaker: ChatMessage.getSpeaker(),
+            content: chatContent,
+            roll: roll
+        })
+        
+        let combatant = game.combat.getCombatantByActor(this.actor._id)._id;
+		game.combat.setInitiative(combatant, totalResult);
+	}
 
     _onToggleEquipped(event) {
         event.preventDefault()
