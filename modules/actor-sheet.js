@@ -364,8 +364,9 @@ export class witchcraftActorSheet extends ActorSheet {
 
                         // Roll Dice
                         let roll = await new Roll('1d10').evaluate()
-						let rollResult = Number(roll.result);
+                        let rollResult = Number(roll.result);
 						let rollResults = [rollResult];
+						let ruleOfTen = rollResult == 10 ? true : false;
 
                         // Create Chat Message Content
 
@@ -407,7 +408,7 @@ export class witchcraftActorSheet extends ActorSheet {
 								rollResult += (Number(roll.result) - 5);
 							}
 						}
-						while (Number(roll.result) == 1) {
+						while (Number(roll.result) == 1 && ruleOfTen == false) {
 							roll = await new Roll('1d10').evaluate();
 							rollResults.push(roll.result);
 							if (Number(roll.result) < 5 && Number(roll.result) > 1) {
