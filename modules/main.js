@@ -3,10 +3,12 @@ import { witchcraftActorSheet } from "./actor-sheet.js";
 import { witchcraftActor } from "./actor.js";
 import { witchcraftItem } from "./item.js";
 import { witchcraftItemSheet } from "./item-sheet.js";
-import { witchcraftCreatureSheet } from "./creature-sheet.js"
-import { witchcraftvehicleSheet } from "./vehicle-sheet.js"
+import { witchcraftCreatureSheet } from "./creature-sheet.js";
+import { witchcraftvehicleSheet } from "./vehicle-sheet.js";
+import { witchcraftCombat } from "./combat.js";
 import { registerTemplates } from "./register-templates.js";
 import { registerHandlebarsHelpers } from "./handlebars.js";
+
 
 /* -------------------------------------------- */
 /*  Foundry VTT Initialization                  */
@@ -27,7 +29,8 @@ Hooks.once("init", async function () {
     // Define Custom Entity Classes
     CONFIG.Actor.documentClass = witchcraftActor
     CONFIG.Item.documentClass = witchcraftItem
-
+    CONFIG.Combat.documentClass = witchcraftCombat
+    
     // Register Partial Templates
     registerTemplates();
     registerHandlebarsHelpers();

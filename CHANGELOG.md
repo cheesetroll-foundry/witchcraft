@@ -1,3 +1,15 @@
+### 1.0.4
+
+Add initiative rolling to character sheet.
+
+Expand Notes section to fill space.
+
+Set default grid size to 2 yards.
+
+Sight powers add essence points.
+
+Fix bug where Rule of One was being applied on 1s rolled on Rule of Ten explosion.
+
 ### 1.0.3
 
 Add Specialties to Skills section and dice rolling.  Use the Sp button to add a Specialty, and then select it from the drop-down when rolling to get a +2 on that roll.
