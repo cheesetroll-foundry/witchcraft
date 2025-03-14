@@ -1,3 +1,8 @@
+## 1.0.6
+
+Update speed to yards/second to keep units consistent.
+
+
 ## 1.0.5
 
 Package things up for listing on Foundry's site.

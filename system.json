@@ -2,7 +2,7 @@
     "id": "witchcraft",
     "title": "WitchCraft",
     "description": "A digital system for playing WitchCraft by Eden Studios",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "compatibility": {
     	"minimum": "12",
     	"verified": "12.331"
