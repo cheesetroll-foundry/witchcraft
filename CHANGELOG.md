@@ -1,3 +1,7 @@
+## 1.0.5
+
+Package things up for listing on Foundry's site.
+
 ### 1.0.4
 
 Add initiative rolling to character sheet.
