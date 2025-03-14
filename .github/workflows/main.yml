@@ -10,7 +10,7 @@ jobs:
     - run: zip -r ./witchcraft.zip system.json template.json CHANGELOG.md README.md images/ modules/ styles/ templates/
     - name: Create Release
       id: create_latest_release
-      uses: ncipollo/release-action@v1
+      uses: ncipollo/release-action@v1.16.0
       with:
         allowUpdates: true
         name: Latest
