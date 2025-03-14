@@ -29,8 +29,8 @@
     ],
     "url": "https://github.com/cheesetroll-foundry/witchcraft/",
     "bugs": "https://github.com/cheesetroll-foundry/witchcraft/issues",
-    "changelog": "https://github.com/cheesetroll-foundry/witchcraft/blob/main/CHANGELOG.md",
-    "manifest": "https://github.com/cheesetroll-foundry/witchcraft/blob/main/system.json",
-    "download": "https://github.com/cheesetroll-foundry/witchcraft/archive/refs/tags/latest.zip",
+    "changelog": "https://github.com/cheesetroll-foundry/witchcraft/releases/download/latest/CHANGELOG.md",
+    "manifest": "https://github.com/cheesetroll-foundry/witchcraft/releases/download/latest/system.json",
+    "download": "https://github.com/cheesetroll-foundry/witchcraft/releases/download/latest/witchcraft.zip",
     "license": "LICENSE.txt"
 }

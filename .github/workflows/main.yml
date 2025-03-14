@@ -21,7 +21,7 @@ jobs:
         draft: false
         prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: './system.json,./witchcraft.zip'
+        artifacts: './system.json,./witchcraft.zip,./CHANGELOG.md'
         tag: ${{ steps.get-version.outputs.version }} # Use the version as the tag
     - name: Create Release
       id: create_latest_release
