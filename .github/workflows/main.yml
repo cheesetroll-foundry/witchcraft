@@ -33,5 +33,5 @@ jobs:
         draft: false
         prerelease: false
         token: ${{ secrets.GITHUB_TOKEN }}
-        artifacts: './system.json,./witchcraft.zip'
+        artifacts: './system.json,./witchcraft.zip,./CHANGELOG.md'
         tag: latest
