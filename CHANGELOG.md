@@ -1,7 +1,10 @@
+## 1.0.7
+
+Correct flat damage multiplier (was not being applied if no Attribute selected)
+
 ## 1.0.6
 
 Update speed to yards/second to keep units consistent.
-
 
 ## 1.0.5
 
