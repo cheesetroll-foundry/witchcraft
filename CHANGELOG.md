@@ -1,3 +1,7 @@
+## 1.0.8
+
+Add ability to include bonus damage before multiplier from high skill rolls in damage calculation
+
 ## 1.0.7
 
 Correct flat damage multiplier (was not being applied if no Attribute selected)

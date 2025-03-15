@@ -516,6 +516,8 @@ export class witchcraftActorSheet extends ActorSheet {
                                 <p><strong>If a ranged weapon</strong>, select how many shots to take and select weapon firing mode. The number of shots
                                 fired will be reduced from the weapon's current load capacity. Make sure you have enough ammo in the chamber!</p>
 
+								<p><strong>If you rolled at least a Fourth Level success</strong>, enter your bonus damage to add before applying the multiplier.
+
                                 <p>Otherwise, leave default and click roll.</p>
                             </div>
 
@@ -540,6 +542,12 @@ export class witchcraftActorSheet extends ActorSheet {
                                                 </select>
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <th>Skill Roll Bonus Damage</th>
+                                            <td>
+                                                <input type="number" id="bonusDamage" name="bonusDamage" value="0">
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -556,8 +564,9 @@ export class witchcraftActorSheet extends ActorSheet {
                         // Grab Values from Dialog
                         let shotNumber = html[0].querySelector('#shotNumber').value
                         let firingMode = html[0].querySelector('#firingMode').value
+						let bonusDamage = html[0].querySelector('#bonusDamage').value
 
-                        const roll = await new Roll(weapon.system.damage_string).evaluate()
+                        
 
                         let tags = []
                         if (firingMode != 'None/Melee') { tags.push(`<div><b>${firingMode}</b>: ${shotNumber == 1 ? shotNumber + " shot" : shotNumber + " shots"}</div>`) }
@@ -573,6 +582,14 @@ export class witchcraftActorSheet extends ActorSheet {
                                     return ui.notifications.info(`You do not have enough ammo loaded to fire ${shotNumber} rounds!`)
                             }
                         }
+
+						//add bonusDamage on weapon
+						let damage_string_final = weapon.system.damage_string
+						if (bonusDamage != 0) {
+							damage_string_final = '(' + damage_string_final.split('*')[0] + '+' + bonusDamage + ')*' + damage_string_final.split('*')[1]
+						}
+						
+						const roll = await new Roll(damage_string_final).evaluate()
 
                         // Create Chat Content
                         let chatContent = `<div>
@@ -590,7 +607,7 @@ export class witchcraftActorSheet extends ActorSheet {
                                                         <tr>
                                                             <td class="table-center-align">[[${roll.result}]]</td>
                                                             <td class="table-center-align">${weapon.system.damage_types[weapon.system.damage_type]}</td>
-                                                            <td class="table-center-align">${weapon.system.damage_string}</td>
+                                                            <td class="table-center-align">${damage_string_final}</td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
