@@ -228,10 +228,10 @@
         "templates": {
             "weapon": {
                 "range": "",
-                "damage": "0",
+                "damage": "d4",
                 "damage_cha_multiplier": "none",
                 "damage_cha_multiplier_modifier": 0,
-                "damage_string": "0",
+                "damage_string": "",
                 "ammo_type": "",
                 "damage_type": "none",
                 "damage_types": [

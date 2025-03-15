@@ -35,10 +35,14 @@ export class witchcraftItem extends Item {
     _prepareWeaponItem(actorData, itemData) {
         // Build Damage String by combining Damage Entry with Damage Multiplier Entry (Looks at Actor to grab Multiplier Value)
         // This does not apply to weapons on vehicles
-        if (itemData.damage_cha_multiplier != "none" && this.isEmbedded && this.actor.type != 'vehicle') {
+        if (this.isEmbedded && this.actor.type != 'vehicle') {
             
             if (typeof (itemData.damage_cha_multiplier_modifier) == "number") {
-                itemData.damage_string = `${itemData.damage}*${(actorData.primaryAttributes[itemData.damage_cha_multiplier].value) + itemData.damage_cha_multiplier_modifier + (itemData.damage_type == 1 ? 1 : 0)}`
+            	if (itemData.damage_cha_multiplier != "none") {
+	                itemData.damage_string = `${itemData.damage}*${(actorData.primaryAttributes[itemData.damage_cha_multiplier].value) + itemData.damage_cha_multiplier_modifier + (itemData.damage_type == 1 ? 1 : 0)}`
+	            } else {
+	            	itemData.damage_string = `${itemData.damage}*${itemData.damage_cha_multiplier_modifier + (itemData.damage_type == 1 ? 1 : 0)}`
+	            }
             } else {
                 itemData.damage_string = `${itemData.damage}*${actorData.primaryAttributes[itemData.damage_cha_multiplier].value + (itemData.damage_type == 1 ? 1 : 0)}`
             }
