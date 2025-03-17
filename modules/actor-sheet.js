@@ -70,7 +70,8 @@ export class witchcraftActorSheet extends ActorSheet {
                     break
 
                 case "specialty":
-                    specialty.push(i)
+                	//group specialties under skills
+                    skill.push(i)
                     break
                     
                 case "drawback":
@@ -84,8 +85,8 @@ export class witchcraftActorSheet extends ActorSheet {
         for (let category of itemCats) {
             if (category.length > 1) {
                 category.sort((a, b) => {
-                    let nameA = a.name.toLowerCase()
-                    let nameB = b.name.toLowerCase()
+                    let nameA = a.system.label ? a.system.label.toLowerCase() : a.name.toLowerCase()
+                    let nameB = b.system.label ? b.system.label.toLowerCase() : b.name.toLowerCase()
                     if (nameA > nameB) { return 1 }
                     else { return -1 }
                 })
@@ -201,8 +202,8 @@ export class witchcraftActorSheet extends ActorSheet {
         function sortOptions(optionType) {
 			if (optionType.length > 1) {
 				optionType.sort((a, b) => {
-					let nameA = a.name.toLowerCase()
-					let nameB = b.name.toLowerCase()
+					let nameA = a.system.label ? a.system.label.toLowerCase() : a.name.toLowerCase()
+					let nameB = b.system.label ? b.system.label.toLowerCase() : b.name.toLowerCase()
 					if (nameA > nameB) { return 1 }
 					else { return -1 }
 				})
@@ -211,15 +212,12 @@ export class witchcraftActorSheet extends ActorSheet {
         }
         
         let skillOptions = []
-        for (let skill of sortOptions(this.actor.items.filter(item => item.type === 'skill'))) {
+        for (let skill of sortOptions(this.actor.items.filter(item => (item.type === 'skill' || item.type === 'specialty')))) {
             let option = `<option value="${skill.id}">${skill.name} ${skill.system.level}</option>`
+            if (skill.type == 'specialty') {
+                option = `<option value="${skill.id}">${skill.system.label} ${skill.system.level}</option>`
+            }
             skillOptions.push(option)
-        }
-        
-        let specialtyOptions = []
-        for (let specialty of sortOptions(this.actor.items.filter(item => item.type === 'specialty'))) {
-            let option = `<option value="${specialty.id}">${specialty.name}</option>`
-            specialtyOptions.push(option)
         }
 
         let qualityOptions = []
@@ -295,15 +293,6 @@ export class witchcraftActorSheet extends ActorSheet {
                                             </select>
                                         </td>
                                     </tr>
-									<tr>
-                                        <td class="table-bold-text">Specialties</td>
-                                        <td>
-                                            <select id="specialtySelect" name="specialties">
-                                                <option value="None">None</option>
-                                                ${specialtyOptions.join('')}
-                                            </select>
-                                        </td>
-                                    </tr>
                                     <tr>
                                         <td class="table-bold-text">Qualities</td>
                                         <td>
@@ -346,7 +335,6 @@ export class witchcraftActorSheet extends ActorSheet {
                         let attributeTestSelect = html[0].querySelector('#attributeTestSelect').value
                         let userInputModifier = Number(html[0].querySelector('#inputModifier').value)
                         let selectedSkill = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#skillSelect').value)
-                        let selectedSpecialty = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#specialtySelect').value)
                         let selectedQuality = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#qualitySelect').value)
                         let selectedDrawback = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#drawbackSelect').value)
                         let selectedPower = this.actor.getEmbeddedDocument("Item", html[0].querySelector('#powerSelect').value)
@@ -354,14 +342,13 @@ export class witchcraftActorSheet extends ActorSheet {
                         // Set values for options
                         let attributeValue = attributeTestSelect === 'Simple' ? actorData.primaryAttributes[attributeLabel.toLowerCase()].value * 2 : actorData.primaryAttributes[attributeLabel.toLowerCase()].value
                         let skillValue = selectedSkill != undefined ? selectedSkill.system.level : 0
-                        let specialtyValue = selectedSpecialty != undefined ? 2 : 0
-						let qualityValue = selectedQuality != undefined ? selectedQuality.system.bonus : 0
+                        let qualityValue = selectedQuality != undefined ? selectedQuality.system.bonus : 0
                         let drawbackValue = selectedDrawback != undefined ? selectedDrawback.system.bonus : 0
                         let powerValue = selectedPower != undefined ? selectedPower.system.level : 0
                         let statusPenalties = actorData.secondaryAttributes.endurance_points.loss_penalty + actorData.secondaryAttributes.essence.loss_penalty
 
                         // Calculate total modifier to roll
-                        let rollMod = (attributeValue + skillValue + specialtyValue + qualityValue + powerValue + userInputModifier) - Math.abs(drawbackValue) + statusPenalties
+                        let rollMod = (attributeValue + skillValue + qualityValue + powerValue + userInputModifier) - Math.abs(drawbackValue) + statusPenalties
 
                         // Roll Dice
                         let roll = await new Roll('1d10').evaluate()
@@ -379,10 +366,11 @@ export class witchcraftActorSheet extends ActorSheet {
                         }
                         if (selectedSkill != undefined) { 
                             const skillLevel = selectedSkill.system.level;
-                            tags.push(`<span class="${skillLevel >= 0 ? 'bonusColorClass' : 'penaltyColorClass'}">${selectedSkill.name} ${skillLevel >= 0 ? '+' : ''}${skillLevel}</span>`) 
-                        }
-                        if (selectedSpecialty != undefined) { 
-                            tags.push(`<span class="${'bonusColorClass'}">${selectedSpecialty.name} ${'+2'}</span>`) 
+                            if (selectedSkill.system.label != undefined) {
+                                tags.push(`<span class="${skillLevel >= 0 ? 'bonusColorClass' : 'penaltyColorClass'}">${selectedSkill.system.label} ${skillLevel >= 0 ? '+' : ''}${skillLevel}</span>`)
+                            } else {
+                                tags.push(`<span class="${skillLevel >= 0 ? 'bonusColorClass' : 'penaltyColorClass'}">${selectedSkill.name} ${skillLevel >= 0 ? '+' : ''}${skillLevel}</span>`)
+                            }
                         }
                         if (selectedQuality != undefined) { 
                             const qualityBonus = selectedQuality.system.bonus;

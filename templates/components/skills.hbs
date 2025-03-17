@@ -15,16 +15,8 @@
         <tbody>
             {{#each actor.skill as |item id|}}
             <tr class="item" data-item-id="{{item._id}}">
-                <td class="item-name">{{item.name}}</td>
+                <td class="item-name">{{#if item.system.label}}{{item.system.label}}{{else}}{{item.name}}{{/if}}</td>
                 <td class="table-center-align">{{item.system.level}}</td>
-                <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
-                            class="fas fa-trash"></i></a></td>
-            </tr>
-            {{/each}}
-            {{#each actor.specialty as |item id|}}
-            <tr class="item" data-item-id="{{item._id}}">
-                <td class="item-name">{{item.name}}</td>
-                <td class="table-center-align"></td>
                 <td class="table-center-align"><a class="item-control item-delete" title="Delete Item"><i
                             class="fas fa-trash"></i></a></td>
             </tr>

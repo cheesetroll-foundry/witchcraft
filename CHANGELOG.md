@@ -1,3 +1,7 @@
+## 1.1
+
+Revamped specialty to apply only to a selected skill.  Create the skill first, then create the specialty and select that skill.  If your GM lets you apply a specialty to a different roll, like an invocation, you'll need to create a 0-level skill and apply a specialty to that.
+
 ## 1.0.8
 
 Add ability to include bonus damage before multiplier from high skill rolls in damage calculation

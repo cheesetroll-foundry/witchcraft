@@ -6,6 +6,19 @@
     <section>
         <div class="description-container">
             <div class="item-attribute-sidebar">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th>Related Skill</th>
+                            <td>
+                                <select id="relatedSkill" name="system.relatedSkill">
+                                    {{#selectOptions item.system.skills selected=item.system.relatedSkill}}
+                                    {{/selectOptions}}
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
             {{> "systems/witchcraft/templates/components/item-description-sidebar.hbs"}}
         </div>
